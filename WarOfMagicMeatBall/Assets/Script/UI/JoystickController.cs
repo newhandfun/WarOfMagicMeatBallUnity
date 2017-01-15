@@ -25,4 +25,7 @@ public class JoystickController : ScrollRect{
 		base.content.anchoredPosition = contentPostion;
 	}
 		
+	public Vector3 GetRelativePosition(){
+		return this.content.localPosition.normalized;
+	}
 }

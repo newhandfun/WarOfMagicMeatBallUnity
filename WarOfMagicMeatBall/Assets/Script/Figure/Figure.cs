@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Figure : MonoBehaviour {
 
+	//value
 	[SerializeField]
 	private int hp;
 	[SerializeField]
@@ -13,6 +14,10 @@ public class Figure : MonoBehaviour {
 	private int damage;
 	[SerializeField]
 	private int orginDamage = 5;
+
+	//Component
+	public Transform tran;
+	public Animator anim;
 
 	//decide damage <0 or not
 	public bool isDamageForbid = true;
@@ -40,5 +45,8 @@ public class Figure : MonoBehaviour {
 		InitialHP ();
 		InitialDamage ();
 		InitialSpeed ();
+		anim = GetComponent<Animator> ();
+		tran = GetComponent<Transform> ();
 	}
+
 }

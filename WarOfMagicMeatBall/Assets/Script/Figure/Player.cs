@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player : Figure {
 
-	private float verticalMovement;
-	private float horizontalMovement;
 
-	void Move(){
-		verticalMovement = Input.GetAxis ();
+	public void Rotation(Vector3 _direction){
+		tran.forward = _direction;
 	}
 }
