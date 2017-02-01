@@ -1,52 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Figure : MonoBehaviour {
 
-	//value
-	[SerializeField]
-	private int hp;
-	[SerializeField]
-	private int hpMax = 10;
-	[SerializeField]
-	private int speed = 100;
-	[SerializeField]
-	private int damage;
-	[SerializeField]
-	private int orginDamage = 5;
+public class Figure{
+
+	public FigureValue myValue;
+	public AnimatorManager _amanager;
 
 	//Component
-	public Transform tran;
-	public Animator anim;
+	public GameObject myObject;
+	public Transform myTran;
 
-	//decide damage <0 or not
-	public bool isDamageForbid = true;
+	//Animation
+	public Animator myAnim;
+	public AnimatorManager myAnimManager;
 
-	//get/set
-	public int HP{
-		get{ return hp;}
-		set{ HP = Mathf.Min (value, 0);}
-	}
-	public int Speed{
-		get{ return speed;}
-		set{ speed = Mathf.Min (value, 0);}
-	}
-	public int Damage{
-		get{ return damage;}
-		set{ damage = isDamageForbid? 
-				Mathf.Min (value, 0):value;}
-	}
+	//system
+	public Combat myCombat;
 
-	//Initial
-	public void InitialHP(){hp = hpMax;}
-	public void InitialSpeed(){speed = 100;}
-	public void InitialDamage(){damage = orginDamage;}
-	public void InitialAll(){
-		InitialHP ();
-		InitialDamage ();
-		InitialSpeed ();
-		anim = GetComponent<Animator> ();
-		tran = GetComponent<Transform> ();
+
+	public Figure(){}
+
+	public Figure(GameObject _object,int _hp,int _speed,int _damage){
+		myObject = _object;
+		myValue = new MosterValue (_hp,_speed,_damage);
+		myAnim = myObject.GetComponent<Animator> ();
+		myTran = myObject.GetComponent<Transform> ();
 	}
 
+	public void AttackAnimation(){
+		myAnim.SetBool ("Attack",true);
+	}
+
+	public void Start(){
+		
+	}
+
+	public void Update(){
+		
+	}
+
+	public void Destory(){
+		
+	}
 }

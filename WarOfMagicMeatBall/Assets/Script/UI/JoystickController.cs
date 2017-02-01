@@ -10,8 +10,10 @@ public class JoystickController : ScrollRect{
 
 	protected override void Start ()
 	{
-		radius = GetComponent<RectTransform>().sizeDelta.x* 0.35f;
 		base.Start ();
+		var myRect = GetComponent<RectTransform> ();
+		myRect.sizeDelta = new Vector2 (myRect.rect.height,0);
+		radius = myRect.rect.width* 0.4f;
 	}
 
 	public override void OnDrag (UnityEngine.EventSystems.PointerEventData eventData)
