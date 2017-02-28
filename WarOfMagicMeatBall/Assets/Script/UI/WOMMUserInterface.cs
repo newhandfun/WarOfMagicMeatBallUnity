@@ -6,8 +6,9 @@ using UnityEngine.UI;
 /// <summary>
 /// WOMM UI
 /// </summary>
-public abstract class WOMMUserInterface : MonoBehaviour {
-	protected WOMMGame myGame;
+[SerializeField]public abstract class WOMMUserInterface  {
+
+    protected WOMMGame myGame;
 	protected GameObject myRootUI;
 	protected bool isActive = true;
 
@@ -41,10 +42,10 @@ public abstract class WOMMUserInterface : MonoBehaviour {
 	FigureSystem myFigureSystem;
 
 	//property
-	[SerializeField] Button attackInput;
+	[SerializeField] MyButton attackInput;
 	[SerializeField] JoystickController movementInput;
-	[SerializeField] Button jumpInput;
-	[SerializeField] Button[] skillInput;
+	[SerializeField] MyButton jumpInput;
+	[SerializeField] MyButton[] skillInput;
 
 
 	public void inject(ref FigureSystem _figure){
@@ -53,7 +54,52 @@ public abstract class WOMMUserInterface : MonoBehaviour {
 
 	public override void Inititalize ()
 	{
-		
+        UIFactory.instance.refreshCanvas = UIFactory.RefreshCanvasType.usuallyRefreshCanvas;
+
+        //LoadUIformResource
+        if (myRootUI == null) {
+            myRootUI = UIFactory.instance.CreateObjectToScene("Base");
+            myRootUI.name = "Controller";
+            RectTransform rect = myRootUI.GetComponent<RectTransform>();
+            rect.sizeDelta = Vector3.zero;
+            rect.offsetMin = rect.offsetMax = Vector3.zero;
+        }
+
+        //move on controllor drag
+        if (movementInput == null)
+        {
+            GameObject moveObj = UIFactory.instance.CreateObjectToScene("Movement");
+            RectTransform moveRect = moveObj.GetComponent<RectTransform>();
+            moveRect.SetParent(myRootUI.transform);
+            moveRect.sizeDelta = Vector3.zero;
+            moveRect.offsetMin = moveRect.offsetMax = Vector3.zero;
+            movementInput = moveObj.GetComponentInChildren<JoystickController>();
+            movementInput.OnStart();
+        }
+
+
+        //attack on click
+        if (attackInput == null)
+        {
+            GameObject attackObj = UIFactory.instance.CreateObjectToScene("Attackion");
+            RectTransform attackRect = attackObj.GetComponent<RectTransform>();
+            attackRect.SetParent(myRootUI.transform);
+            attackRect.sizeDelta = Vector3.zero;
+            attackRect.offsetMin = attackRect.offsetMax = Vector3.zero;
+            attackInput = attackObj.GetComponentInChildren<MyButton>();
+        }
+
+        if (myFigureSystem.main != null)
+        {
+            movementInput.myOnDragDele = myFigureSystem.main.MoveTo;
+            movementInput.myOnExitDele = myFigureSystem.main.MoveTo;
+            attackInput.onButtonDownDele = myFigureSystem.main.NormalAttack;
+            //attackInput.onButtonUpDele = myFigureSystem.main.CencleAttack;
+        }
+        else
+            Debug.Log("沒有主角無法使用控制UI");
+
+        
 	}
 }
 
@@ -87,5 +133,24 @@ public abstract class WOMMUserInterface : MonoBehaviour {
 /// No usage now
 /// </summary>
 [SerializeField]public class EventUI : WOMMUserInterface{
-	
+    GameEventSystem myGameEventSystem;
+
+    public void inject(ref GameEventSystem _ges) {
+        myGameEventSystem = _ges;
+    }
+}
+
+[SerializeField]
+public class LogInUI : WOMMUserInterface {
+
+    Button loginButton;
+    public delegate void LoginDelegate();
+
+    public void SetLoginButtonEvent(LoginDelegate _login) {
+        if (myRootUI == null) myRootUI = (UIFactory.instance.CreateObjectToScene("LoginButton"));
+        else UIFactory.instance.Instantiate(myRootUI, Vector3.zero);
+        if (loginButton == null)
+            loginButton = myRootUI.GetComponentInChildren<Button>();
+        loginButton.onClick.AddListener(() => _login());
+    }
 }

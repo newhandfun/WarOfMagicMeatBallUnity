@@ -25,6 +25,7 @@ public class MyImportSetting : AssetPostprocessor{
 				clip.loopTime = true;
 				clip.wrapMode = WrapMode.Loop;
 				clip.lockRootRotation = true;
+                clip.keepOriginalPositionY = clip.keepOriginalPositionXZ = clip.keepOriginalOrientation = true;
 			}
 		}
 	}

@@ -2,45 +2,80 @@
 using System.Collections;
 
 
-public class Figure{
+public abstract class Figure {
 
-	public FigureValue myValue;
-	public AnimatorManager _amanager;
+    protected FigureValue myValue;
+    protected AnimatorManager myAmanager = new AnimatorManager();
 
-	//Component
-	public GameObject myObject;
-	public Transform myTran;
+    //MonoBehavior
+    protected FigureBehavior myBehavior;
+    public virtual GameObject GetObject() { return myBehavior.GetObject(); }
+    public virtual Transform GetTrans() { return myBehavior.GetTrans(); }
+    //public virtual BoxCollider GetWeaponColider() { return myBehavior.GetWeaponColider(); }
+    //public virtual BoxCollider GetSelfColider() { return myBehavior.GetSelfColider(); }
+    //public virtual Animator GetAnim() { return myBehavior.GetAnimator(); }
 
-	//Animation
-	public Animator myAnim;
-	public AnimatorManager myAnimManager;
+    //Animation
+    protected static AnimatorManager myAnimManager = new AnimatorManager();
+    protected int attackNumber = 1;
+    public virtual int GetAttackNumber(){ return attackNumber; }
+    public virtual void SetAttackNumber(int _number) { attackNumber = _number; }
 
-	//system
-	public Combat myCombat;
+    //system
+    protected Combat myCombat;
 
+    public Figure() { }
 
-	public Figure(){}
+    public Figure(GameObject _object,FigureValue _value) {
+        myBehavior = _object.GetComponent<FigureBehavior>();
+        if (myBehavior == null)
+            Debug.Log("沒有FigureBehavior，多數函式將無法運作!");
+        myBehavior.Awake();
+        myValue = _value;
+    }
 
-	public Figure(GameObject _object,int _hp,int _speed,int _damage){
-		myObject = _object;
-		myValue = new MosterValue (_hp,_speed,_damage);
-		myAnim = myObject.GetComponent<Animator> ();
-		myTran = myObject.GetComponent<Transform> ();
-	}
+    public virtual void SetValue(FigureValue _value) {
+        myValue = _value;
+    }
 
-	public void AttackAnimation(){
-		myAnim.SetBool ("Attack",true);
-	}
+    //移動
+    public abstract void MoveTo(float _x, float _z);
+    public abstract void MoveFinish();
 
-	public void Start(){
-		
-	}
+    //攻擊
+    public virtual void NormalAttack() {
+        AnimAttack();
+    }
+    public virtual void CencleAttack() {
+        AnimCencleAttack();
+    }
 
-	public void Update(){
-		
-	}
+    //AI
+    // public abstract void setAI();
 
-	public void Destory(){
-		
-	}
+    //技能
+    public virtual void SetSkill() {
+    }
+    public virtual void GetSkill() {
+    }
+    public abstract void UseSkill(int index);
+
+    //動作
+    public virtual void AnimWalk(float _value) {
+        myBehavior.GetAnimator().SetFloat(myAnimManager.vertical, _value);
+    }
+    public virtual void AnimAttack() {
+        myBehavior.GetAnimator().SetInteger(myAnimManager.AttackType,this.attackNumber);
+        myBehavior.CallInvoke(FigureBehavior.InokeMethod.CencleAttackAnimtion.ToString(),0.2f);
+    }
+    public virtual void AnimCencleAttack()
+    {
+        myBehavior.GetAnimator().SetInteger(myAnimManager.AttackType, 0);
+    }
+
+    public abstract void Start();
+
+    public abstract void Update();
+
+    public abstract void Destory();
 }

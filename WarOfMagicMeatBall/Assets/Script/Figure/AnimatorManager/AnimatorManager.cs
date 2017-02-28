@@ -18,8 +18,9 @@ public class AnimatorManager{
 	public int horizontal;
 	//int
 	public int skillType;
+    public int AttackType;
 
-	public AnimatorManager(){
+    public AnimatorManager(){
 		//bool
 		isIdle = Animator.StringToHash ("isIdle");
 		isNext = Animator.StringToHash ("isNext");
@@ -37,5 +38,6 @@ public class AnimatorManager{
 
 		//int 
 		skillType= Animator.StringToHash("SkillType");
+        AttackType = Animator.StringToHash("AttackType");
 	}
 }

@@ -17,6 +17,8 @@ ModelImporter:
     3300002: MainHouseTop
     4300000: MainHouseBody
     4300002: MainHouseTop
+    6400000: MainHouseBody
+    6400002: MainHouseTop
   materials:
     importMaterials: 1
     materialName: 1
@@ -46,7 +48,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

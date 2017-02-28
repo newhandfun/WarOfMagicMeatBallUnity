@@ -5,43 +5,30 @@ using UnityEngine;
 public abstract class Combat{
 
 	protected FigureValue myValue;
-
-	protected AudioSource myAttackSound;
-
-	protected bool isBroken = true;
+    protected AudioSource myAttackSound;
 
 	protected GameObject hitEffect;
+    protected bool isBrokable = true;
 
-	public Combat(ref FigureValue _value){
+    public Combat(ref FigureValue _value){
 		myValue = _value;
 	}
 
-	public void Attack(Figure _figure){
+	public void Attack(Figure _enemy){
 		DecideDamage ();
-		LetHurt (_figure);
-		LetBroken (_figure);
-		PlaySound (_figure);
-		PlayEffect (_figure);
-	}
-		
-	public virtual void DecideDamage(){
-		myValue.Damage = myValue.OrginDamage;
+		LetHurt (_enemy);
+		LetBroken (_enemy);
+		PlaySound (_enemy);
+		PlayEffect (_enemy);
 	}
 
-	public virtual void LetHurt(Figure _figure){
-		myValue.Damage = myValue.OrginDamage;
-	}
+    public abstract void DecideDamage();
 
-	public virtual void LetBroken(Figure _figure){
-		if(isBroken)
-			_figure.myAnim.SetBool (_figure.myAnimManager.isBroken,true);
-	}
+    public abstract void LetHurt(Figure _figure);
 
-	public virtual void PlaySound(Figure _figure){
-		myAttackSound.Play ();
-	}
+    public abstract void LetBroken(Figure _figure);
 
-	public virtual void PlayEffect(Figure _figure){
-		GameObject.Instantiate (hitEffect,_figure.myTran.position,_figure.myTran.rotation);
-	}
+    public abstract void PlaySound(Figure _figure);
+
+    public abstract void PlayEffect(Figure _figure);
 }

@@ -1,0 +1,393 @@
+fileFormatVersion: 2
+guid: 9a091e61c7928814db8d043f57ffdb9a
+timeCreated: 1487048410
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arm_1_L
+    100002: arm_1_R
+    100004: arm_2_L
+    100006: arm_2_R
+    100008: arm_IK_L
+    100010: arm_IK_L_end
+    100012: arm_IK_R
+    100014: arm_IK_R_end
+    100016: arm_pole_L
+    100018: arm_pole_L_end
+    100020: arm_pole_R
+    100022: arm_pole_R_end
+    100024: cloak
+    100026: cloak_end
+    100028: //RootNode
+    100030: eye_L
+    100032: eye_L_end
+    100034: eye_R
+    100036: eye_R_end
+    100038: feet_L
+    100040: feet_L_end
+    100042: feet_pole_L
+    100044: feet_pole_L_end
+    100046: feet_pole_R
+    100048: feet_pole_R_end
+    100050: feet_R
+    100052: feet_R_end
+    100054: hand_L
+    100056: hand_L_end
+    100058: hand_R
+    100060: hand_R_end
+    100062: hat
+    100064: hat_end
+    100066: hip
+    100068: leg_1_L
+    100070: leg_1_R
+    100072: leg_2_L
+    100074: leg_2_R
+    100076: leg_IK_L
+    100078: leg_IK_L_end
+    100080: leg_IK_R
+    100082: leg_IK_R_end
+    100084: mouth
+    100086: mouth_end
+    100088: root
+    100090: weapon_IK_L
+    100092: weapon_IK_R
+    100094: Cube
+    100096: MeatBall
+    100098: MeatBall_proxy
+    100100: MeatBall|handandleg_L_lib|Dupli|2
+    100102: MeatBall|meatball03_L_lib|Dupli|1
+    100104: "\u5E73\u9762"
+    100106: "\u5E73\u9762.001"
+    100108: "\u5E73\u9762.002"
+    100110: "\u5E73\u9762.003"
+    100112: MeatBall_proxy.001
+    100114: weapon_IK_R_end
+    100116: amerture_proxy
+    100118: amerture_L_lib
+    100120: handandleg_proxy
+    100122: meatball03_L_lib
+    100124: Lshoes
+    100126: Lweapon
+    100128: Rshoes
+    100130: Rweapon
+    100132: handandleg_L_lib
+    400000: arm_1_L
+    400002: arm_1_R
+    400004: arm_2_L
+    400006: arm_2_R
+    400008: arm_IK_L
+    400010: arm_IK_L_end
+    400012: arm_IK_R
+    400014: arm_IK_R_end
+    400016: arm_pole_L
+    400018: arm_pole_L_end
+    400020: arm_pole_R
+    400022: arm_pole_R_end
+    400024: cloak
+    400026: cloak_end
+    400028: //RootNode
+    400030: eye_L
+    400032: eye_L_end
+    400034: eye_R
+    400036: eye_R_end
+    400038: feet_L
+    400040: feet_L_end
+    400042: feet_pole_L
+    400044: feet_pole_L_end
+    400046: feet_pole_R
+    400048: feet_pole_R_end
+    400050: feet_R
+    400052: feet_R_end
+    400054: hand_L
+    400056: hand_L_end
+    400058: hand_R
+    400060: hand_R_end
+    400062: hat
+    400064: hat_end
+    400066: hip
+    400068: leg_1_L
+    400070: leg_1_R
+    400072: leg_2_L
+    400074: leg_2_R
+    400076: leg_IK_L
+    400078: leg_IK_L_end
+    400080: leg_IK_R
+    400082: leg_IK_R_end
+    400084: mouth
+    400086: mouth_end
+    400088: root
+    400090: weapon_IK_L
+    400092: weapon_IK_R
+    400094: Cube
+    400096: MeatBall
+    400098: MeatBall_proxy
+    400100: MeatBall|handandleg_L_lib|Dupli|2
+    400102: MeatBall|meatball03_L_lib|Dupli|1
+    400104: "\u5E73\u9762"
+    400106: "\u5E73\u9762.001"
+    400108: "\u5E73\u9762.002"
+    400110: "\u5E73\u9762.003"
+    400112: MeatBall_proxy.001
+    400114: weapon_IK_R_end
+    400116: amerture_proxy
+    400118: amerture_L_lib
+    400120: handandleg_proxy
+    400122: meatball03_L_lib
+    400124: Lshoes
+    400126: Lweapon
+    400128: Rshoes
+    400130: Rweapon
+    400132: handandleg_L_lib
+    2300000: Cube
+    2300002: MeatBall|handandleg_L_lib|Dupli|2
+    2300004: MeatBall|meatball03_L_lib|Dupli|1
+    2300006: "\u5E73\u9762"
+    2300008: "\u5E73\u9762.001"
+    2300010: "\u5E73\u9762.002"
+    2300012: "\u5E73\u9762.003"
+    2300014: MeatBall_proxy.001
+    2300016: Lshoes
+    2300018: Lweapon
+    2300020: Rshoes
+    2300022: Rweapon
+    3300000: Cube
+    3300002: MeatBall|handandleg_L_lib|Dupli|2
+    3300004: MeatBall|meatball03_L_lib|Dupli|1
+    3300006: "\u5E73\u9762"
+    3300008: "\u5E73\u9762.001"
+    3300010: "\u5E73\u9762.002"
+    3300012: "\u5E73\u9762.003"
+    3300014: MeatBall_proxy.001
+    3300016: Lshoes
+    3300018: Lweapon
+    3300020: Rshoes
+    3300022: Rweapon
+    4300000: "\u5E73\u9762.002"
+    4300002: "\u5E73\u9762"
+    4300004: "\u5E73\u9762.003"
+    4300006: Cube
+    4300008: MeatBall|meatball03_L_lib|Dupli|1
+    4300010: MeatBall|handandleg_L_lib|Dupli|2
+    4300012: MeatBall_proxy.001
+    4300014: handandleg_proxy
+    4300016: meatball03_L_lib
+    4300018: Lweapon
+    4300020: Rweapon
+    4300022: Lshoes
+    4300024: handandleg_L_lib
+    7400000: Stand
+    7400002: DD_stand
+    7400004: HandsStand
+    7400006: Hurt
+    9500000: //RootNode
+    13700000: handandleg_proxy
+    13700002: meatball03_L_lib
+    13700004: handandleg_L_lib
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: HandsStand
+      takeName: HandsStand
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: amerture_L_lib
+        weight: 1
+      - path: amerture_L_lib/root
+        weight: 1
+      - path: amerture_L_lib/root/arm_pole_L
+        weight: 1
+      - path: amerture_L_lib/root/arm_pole_L/arm_pole_L_end
+        weight: 1
+      - path: amerture_L_lib/root/arm_pole_R
+        weight: 1
+      - path: amerture_L_lib/root/arm_pole_R/arm_pole_R_end
+        weight: 1
+      - path: amerture_L_lib/root/feet_pole_L
+        weight: 1
+      - path: amerture_L_lib/root/feet_pole_L/feet_pole_L_end
+        weight: 1
+      - path: amerture_L_lib/root/feet_pole_R
+        weight: 1
+      - path: amerture_L_lib/root/feet_pole_R/feet_pole_R_end
+        weight: 1
+      - path: amerture_L_lib/root/hip
+        weight: 1
+      - path: amerture_L_lib/root/hip/arm_1_L
+        weight: 1
+      - path: amerture_L_lib/root/hip/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture_L_lib/root/hip/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture_L_lib/root/hip/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture_L_lib/root/hip/arm_1_R
+        weight: 1
+      - path: amerture_L_lib/root/hip/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture_L_lib/root/hip/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture_L_lib/root/hip/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture_L_lib/root/hip/cloak
+        weight: 1
+      - path: amerture_L_lib/root/hip/cloak/cloak_end
+        weight: 1
+      - path: amerture_L_lib/root/hip/eye_L
+        weight: 1
+      - path: amerture_L_lib/root/hip/eye_L/eye_L_end
+        weight: 1
+      - path: amerture_L_lib/root/hip/eye_R
+        weight: 1
+      - path: amerture_L_lib/root/hip/eye_R/eye_R_end
+        weight: 1
+      - path: amerture_L_lib/root/hip/hat
+        weight: 1
+      - path: amerture_L_lib/root/hip/hat/hat_end
+        weight: 1
+      - path: amerture_L_lib/root/hip/leg_1_L
+        weight: 1
+      - path: amerture_L_lib/root/hip/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture_L_lib/root/hip/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture_L_lib/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture_L_lib/root/hip/leg_1_R
+        weight: 1
+      - path: amerture_L_lib/root/hip/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture_L_lib/root/hip/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture_L_lib/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture_L_lib/root/hip/mouth
+        weight: 1
+      - path: amerture_L_lib/root/hip/mouth/mouth_end
+        weight: 1
+      - path: amerture_L_lib/root/leg_IK_L
+        weight: 1
+      - path: amerture_L_lib/root/leg_IK_L/leg_IK_L_end
+        weight: 1
+      - path: amerture_L_lib/root/leg_IK_R
+        weight: 1
+      - path: amerture_L_lib/root/leg_IK_R/leg_IK_R_end
+        weight: 1
+      - path: amerture_L_lib/root/weapon_IK_L
+        weight: 1
+      - path: amerture_L_lib/root/weapon_IK_L/arm_IK_L
+        weight: 1
+      - path: amerture_L_lib/root/weapon_IK_L/arm_IK_L/arm_IK_L_end
+        weight: 1
+      - path: amerture_L_lib/root/weapon_IK_R
+        weight: 1
+      - path: amerture_L_lib/root/weapon_IK_R/arm_IK_R
+        weight: 1
+      - path: amerture_L_lib/root/weapon_IK_R/arm_IK_R/arm_IK_R_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: handandleg_L_lib
+        weight: 1
+      - path: Lshoes
+        weight: 1
+      - path: Lweapon
+        weight: 1
+      - path: meatball03_L_lib
+        weight: 1
+      - path: Rshoes
+        weight: 1
+      - path: Rweapon
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: root
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 5c7c97035b4f1784ab8008bf0c4984a4,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

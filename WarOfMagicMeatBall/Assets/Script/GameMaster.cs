@@ -6,7 +6,15 @@ public class GameMaster : MonoBehaviour {
 
 	MySceneManager mySceneManager = new MySceneManager ();
 
-	void Awake(){
+    ResrouceFactory myResrouseFactory = new ResrouceFactory();
+    FigureFactory myFigureFactory = new FigureFactory();
+    UIFactory myUIFactory = new UIFactory();
+
+
+    void Awake(){
+        DontDestroyOnLoad(this.gameObject);
+      
+        mySceneManager = new MySceneManager();
 		mySceneManager.OnAwake ();
 	}
 
@@ -16,5 +24,6 @@ public class GameMaster : MonoBehaviour {
 
 	void Update(){
 		mySceneManager.OnUpdate ();
-	}
+        WOMMGame.Instance.Update();
+    }
 }

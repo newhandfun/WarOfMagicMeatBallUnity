@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MyScene : MonoBehaviour{
+public abstract class MyScene{
 
 	protected MySceneManager mySceneManager = null;
 
@@ -22,11 +23,11 @@ public class MyScene : MonoBehaviour{
 
 	public virtual void Handle(){}
 
-	public virtual void OnSenceStart(){}
+    public abstract void OnSenceStart();
 
-	public virtual void OnSenceUpdate(){}
+    public abstract void OnSenceUpdate();
 
-	public virtual void OnSenceExit(){}
+    public abstract void OnSenceExit();
 
 	public override string ToString(){
 		return string.Format ("[Sence : Name = {0}]", sceneName);
@@ -34,30 +35,65 @@ public class MyScene : MonoBehaviour{
 }
 
 public class LoginScene : MyScene{
+
 	public LoginScene (MySceneManager _mySceneManager):base(_mySceneManager){
 		SceneName = "LogIn";
 	}
 
 	public override void OnSenceStart ()
 	{
-		SceneManager.LoadScene ("LogIn",LoadSceneMode.Single);
+        WOMMGame.Instance.ShowLoginUI(Login);
 	}
 
 	public override void OnSenceUpdate ()
 	{
 		
 	}
+
+    public override void OnSenceExit()
+    {
+        
+    }
+
+    private void Login() {
+        mySceneManager.SetScene(new GongonVillageScene(mySceneManager));
+    }
 }
 
 public class VillageScence : MyScene{
 	public VillageScence (MySceneManager _mySceneManager):base(_mySceneManager){
-		SceneName = "Village";
+        SceneName = "Village";
 	}
 
-	public override void OnSenceStart ()
+    public override void OnSenceExit()
+    {
+        
+    }
+
+    public override void OnSenceStart ()
 	{
-		SceneManager.LoadScene ("Village",LoadSceneMode.Single);
+		
 	}
 
+    public override void OnSenceUpdate()
+    {
+        WOMMGame.Instance.HideLoginUI();
+    }
+}
 
+public class GongonVillageScene : VillageScence
+{
+    public GongonVillageScene(MySceneManager _mySceneManager) : base(_mySceneManager)
+    {
+        SceneName = "Gongon";
+        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+    }
+
+    public override void OnSenceStart()
+    {
+        base.OnSenceStart();
+        WOMMGame.Instance.SetMainMeatBall();
+        WOMMGame.Instance.ShowControllUI();
+        Debug.Log("貢貢村");
+    }
 }

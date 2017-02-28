@@ -1,10 +1,13 @@
-C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEditor.dll
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.Analytics.dll
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.dll
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.HoloLens.dll
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.PlaymodeTestsRunner.dll
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.VR.dll
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\Mono.Cecil.dll
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\Unity.SerializationLogic.dll
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\Unity.DataContract.dll
@@ -17,5 +20,10 @@ C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debu
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEditor.xml
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.PlaymodeTestsRunner.xml
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.Analytics.xml
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.HoloLens.xml
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\Temp\bin\Debug\UnityEngine.VR.xml
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\obj\Debug\Assembly-CSharp.dll
 C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\obj\Debug\Assembly-CSharp.pdb
+C:\Users\newhandfun\OneDrive\WarOfMagicMeatBall\WarOfMagicMeatBall\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache

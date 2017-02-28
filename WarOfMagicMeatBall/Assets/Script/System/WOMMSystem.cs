@@ -6,7 +6,7 @@ public abstract class WOMMSystem  {
 
 	protected WOMMGame myWOMMGame;
 	public WOMMSystem(){
-		myWOMMGame = WOMMGame.Instance();
+		myWOMMGame = WOMMGame.Instance;
 		Initial ();
 	}
 
@@ -29,10 +29,26 @@ public abstract class WOMMSystem  {
 public class FigureSystem : WOMMSystem{
 
 	public Figure main;
+    public GameObject mainMeatBall;
 
-	public void Contruct(Vector3 _position){
+    public void Inject() {
+
+    }
+
+	public void Contruct(string _name,Vector3 _position){
 		
 	}
+
+    public void ContructMeatBallAsMain(Vector3 _position)
+    {
+        if (mainMeatBall == null)
+        {
+            mainMeatBall = FigureFactory.instance.CreateMeatBallToScene();
+            main = (new MeatBall(mainMeatBall,new MeatBallValue(100,100,10)))as Figure;
+
+            
+        }
+    }
 }
 
 public class ControllSystem : WOMMSystem{
@@ -41,6 +57,7 @@ public class ControllSystem : WOMMSystem{
 	//float myHorizontal = 0f;
 
 	Quaternion myRotation;
+    FigureSystem myFigure;
 
 	public override void Initial (){}
 
@@ -51,14 +68,26 @@ public class ControllSystem : WOMMSystem{
 	public void InputDirection(float _x,float _y){
 		
 	}
+
+    public void Inject(ref FigureSystem _figure)
+    {
+        myFigure =_figure;
+    }
 }
 
 public class StageSystem : WOMMSystem{
-	
+
+    FigureSystem myFigure;
+    
+
 }
 
 public class GameEventSystem : WOMMSystem{
-	
+
+    StageSystem myStage;
+
+    //game event delegate
+    public delegate void GameEvent();
 }
 
 public class FigureBuilderSystem : WOMMSystem{

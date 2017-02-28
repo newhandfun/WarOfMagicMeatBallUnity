@@ -19,15 +19,15 @@ public abstract class FigureValue {
 	//get/set
 	public int HP{
 		get{ return hp;}
-		set{ HP = Mathf.Max (value, 0);}
+		set{ hp = Mathf.Max (value, 0);}
 	}
 	public int HPMAX{
 		get{ return hpMax;}
-		set{ HP = Mathf.Max (value, 0);}
+		set{ hp = Mathf.Max (value, 0);}
 	}
 	public int Speed{
 		get{ return speed;}
-		set{ speed = Mathf.Min (value, 0);}
+		set{ speed = Mathf.Min (value, 10);}
 	}
 	public int Damage{
 		get{ return damage;}
