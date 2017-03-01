@@ -90,6 +90,7 @@ ModelImporter:
     100164: Lamp.001
     100166: Lamp.002
     100168: thirdperson
+    100170: MeatBall
     400000: amerture
     400002: arm_1_L
     400004: arm_1_R
@@ -175,6 +176,7 @@ ModelImporter:
     400164: Lamp.001
     400166: Lamp.002
     400168: thirdperson
+    400170: MeatBall
     2300000: //RootNode
     2300002: meatball03
     2300004: bone_eye
@@ -211,6 +213,7 @@ ModelImporter:
     4300026: bone_IK
     4300028: bone_pole
     4300030: bone_weapon_L
+    4300032: MeatBall
     7400000: Tpose
     7400002: Stand
     7400004: ForwardWalk
@@ -286,6 +289,7 @@ ModelImporter:
     13700010: mouse
     13700012: eyeL
     13700014: meatball03
+    13700016: MeatBall
   materials:
     importMaterials: 1
     materialName: 1

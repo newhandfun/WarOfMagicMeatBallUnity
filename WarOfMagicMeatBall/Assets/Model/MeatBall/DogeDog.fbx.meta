@@ -72,6 +72,8 @@ ModelImporter:
     100128: Rshoes
     100130: Rweapon
     100132: handandleg_L_lib
+    100134: body
+    100136: amerture
     400000: arm_1_L
     400002: arm_1_R
     400004: arm_2_L
@@ -139,6 +141,8 @@ ModelImporter:
     400128: Rshoes
     400130: Rweapon
     400132: handandleg_L_lib
+    400134: body
+    400136: amerture
     2300000: Cube
     2300002: MeatBall|handandleg_L_lib|Dupli|2
     2300004: MeatBall|meatball03_L_lib|Dupli|1
@@ -209,18 +213,18 @@ ModelImporter:
       name: HandsStand
       takeName: HandsStand
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 89
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -232,113 +236,109 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: amerture_L_lib
+      - path: amerture
         weight: 1
-      - path: amerture_L_lib/root
+      - path: amerture/root
         weight: 1
-      - path: amerture_L_lib/root/arm_pole_L
+      - path: amerture/root/arm_pole_L
         weight: 1
-      - path: amerture_L_lib/root/arm_pole_L/arm_pole_L_end
+      - path: amerture/root/arm_pole_L/arm_pole_L_end
         weight: 1
-      - path: amerture_L_lib/root/arm_pole_R
+      - path: amerture/root/arm_pole_R
         weight: 1
-      - path: amerture_L_lib/root/arm_pole_R/arm_pole_R_end
+      - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
-      - path: amerture_L_lib/root/feet_pole_L
+      - path: amerture/root/body
         weight: 1
-      - path: amerture_L_lib/root/feet_pole_L/feet_pole_L_end
+      - path: amerture/root/body/arm_1_L
         weight: 1
-      - path: amerture_L_lib/root/feet_pole_R
+      - path: amerture/root/body/arm_1_L/arm_2_L
         weight: 1
-      - path: amerture_L_lib/root/feet_pole_R/feet_pole_R_end
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
         weight: 1
-      - path: amerture_L_lib/root/hip
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
         weight: 1
-      - path: amerture_L_lib/root/hip/arm_1_L
+      - path: amerture/root/body/arm_1_R
         weight: 1
-      - path: amerture_L_lib/root/hip/arm_1_L/arm_2_L
+      - path: amerture/root/body/arm_1_R/arm_2_R
         weight: 1
-      - path: amerture_L_lib/root/hip/arm_1_L/arm_2_L/hand_L
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
         weight: 1
-      - path: amerture_L_lib/root/hip/arm_1_L/arm_2_L/hand_L/hand_L_end
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
         weight: 1
-      - path: amerture_L_lib/root/hip/arm_1_R
+      - path: amerture/root/body/cloak
         weight: 1
-      - path: amerture_L_lib/root/hip/arm_1_R/arm_2_R
+      - path: amerture/root/body/cloak/cloak_end
         weight: 1
-      - path: amerture_L_lib/root/hip/arm_1_R/arm_2_R/hand_R
+      - path: amerture/root/body/eye_L
         weight: 1
-      - path: amerture_L_lib/root/hip/arm_1_R/arm_2_R/hand_R/hand_R_end
+      - path: amerture/root/body/eye_L/eye_L_end
         weight: 1
-      - path: amerture_L_lib/root/hip/cloak
+      - path: amerture/root/body/eye_R
         weight: 1
-      - path: amerture_L_lib/root/hip/cloak/cloak_end
+      - path: amerture/root/body/eye_R/eye_R_end
         weight: 1
-      - path: amerture_L_lib/root/hip/eye_L
+      - path: amerture/root/body/hat
         weight: 1
-      - path: amerture_L_lib/root/hip/eye_L/eye_L_end
+      - path: amerture/root/body/hat/hat_end
         weight: 1
-      - path: amerture_L_lib/root/hip/eye_R
+      - path: amerture/root/body/leg_1_L
         weight: 1
-      - path: amerture_L_lib/root/hip/eye_R/eye_R_end
+      - path: amerture/root/body/leg_1_L/leg_2_L
         weight: 1
-      - path: amerture_L_lib/root/hip/hat
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
         weight: 1
-      - path: amerture_L_lib/root/hip/hat/hat_end
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
         weight: 1
-      - path: amerture_L_lib/root/hip/leg_1_L
+      - path: amerture/root/body/leg_1_R
         weight: 1
-      - path: amerture_L_lib/root/hip/leg_1_L/leg_2_L
+      - path: amerture/root/body/leg_1_R/leg_2_R
         weight: 1
-      - path: amerture_L_lib/root/hip/leg_1_L/leg_2_L/feet_L
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
         weight: 1
-      - path: amerture_L_lib/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
         weight: 1
-      - path: amerture_L_lib/root/hip/leg_1_R
+      - path: amerture/root/body/mouth
         weight: 1
-      - path: amerture_L_lib/root/hip/leg_1_R/leg_2_R
+      - path: amerture/root/body/mouth/mouth_end
         weight: 1
-      - path: amerture_L_lib/root/hip/leg_1_R/leg_2_R/feet_R
+      - path: amerture/root/feet_pole_L
         weight: 1
-      - path: amerture_L_lib/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
+      - path: amerture/root/feet_pole_L/feet_pole_L_end
         weight: 1
-      - path: amerture_L_lib/root/hip/mouth
+      - path: amerture/root/feet_pole_R
         weight: 1
-      - path: amerture_L_lib/root/hip/mouth/mouth_end
+      - path: amerture/root/feet_pole_R/feet_pole_R_end
         weight: 1
-      - path: amerture_L_lib/root/leg_IK_L
+      - path: amerture/root/leg_IK_L
         weight: 1
-      - path: amerture_L_lib/root/leg_IK_L/leg_IK_L_end
+      - path: amerture/root/leg_IK_L/leg_IK_L_end
         weight: 1
-      - path: amerture_L_lib/root/leg_IK_R
+      - path: amerture/root/leg_IK_R
         weight: 1
-      - path: amerture_L_lib/root/leg_IK_R/leg_IK_R_end
+      - path: amerture/root/leg_IK_R/leg_IK_R_end
         weight: 1
-      - path: amerture_L_lib/root/weapon_IK_L
+      - path: amerture/root/weapon_IK_L
         weight: 1
-      - path: amerture_L_lib/root/weapon_IK_L/arm_IK_L
+      - path: amerture/root/weapon_IK_L/arm_IK_L
         weight: 1
-      - path: amerture_L_lib/root/weapon_IK_L/arm_IK_L/arm_IK_L_end
+      - path: amerture/root/weapon_IK_L/arm_IK_L/arm_IK_L_end
         weight: 1
-      - path: amerture_L_lib/root/weapon_IK_R
+      - path: amerture/root/weapon_IK_R
         weight: 1
-      - path: amerture_L_lib/root/weapon_IK_R/arm_IK_R
+      - path: amerture/root/weapon_IK_R/arm_IK_R
         weight: 1
-      - path: amerture_L_lib/root/weapon_IK_R/arm_IK_R/arm_IK_R_end
+      - path: amerture/root/weapon_IK_R/arm_IK_R/arm_IK_R_end
         weight: 1
       - path: Cube
         weight: 1
-      - path: handandleg_L_lib
+      - path: "\u5E73\u9762"
         weight: 1
-      - path: Lshoes
+      - path: "\u5E73\u9762.001"
         weight: 1
-      - path: Lweapon
+      - path: "\u5E73\u9762.002"
         weight: 1
-      - path: meatball03_L_lib
-        weight: 1
-      - path: Rshoes
-        weight: 1
-      - path: Rweapon
+      - path: "\u5E73\u9762.003"
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}

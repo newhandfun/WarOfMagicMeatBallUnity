@@ -10,10 +10,8 @@ public abstract class Figure {
     //MonoBehavior
     protected FigureBehavior myBehavior;
     public virtual GameObject GetObject() { return myBehavior.GetObject(); }
+    public virtual void SetObject(GameObject _GO) { myBehavior = _GO.GetComponent<FigureBehavior>(); }
     public virtual Transform GetTrans() { return myBehavior.GetTrans(); }
-    //public virtual BoxCollider GetWeaponColider() { return myBehavior.GetWeaponColider(); }
-    //public virtual BoxCollider GetSelfColider() { return myBehavior.GetSelfColider(); }
-    //public virtual Animator GetAnim() { return myBehavior.GetAnimator(); }
 
     //Animation
     protected static AnimatorManager myAnimManager = new AnimatorManager();
@@ -71,6 +69,10 @@ public abstract class Figure {
     public virtual void AnimCencleAttack()
     {
         myBehavior.GetAnimator().SetInteger(myAnimManager.AttackType, 0);
+    }
+
+    //材質
+    public virtual void SetUV(Vector2 _uv) {
     }
 
     public abstract void Start();

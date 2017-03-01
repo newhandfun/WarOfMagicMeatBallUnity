@@ -20,14 +20,6 @@ public abstract class FigureBuilder {
 	public abstract void AddAI();
 }
 
-public enum MeatBallSuit{
-	BlackSmith,
-	Archor,
-	Farmer,
-	SpearFighter,
-	OldSworder
-}
-
 public class MeatBallPara : FigurePara{
 	public MeatBallSuit mySuit;
 }

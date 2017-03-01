@@ -146,11 +146,21 @@ public class LogInUI : WOMMUserInterface {
     Button loginButton;
     public delegate void LoginDelegate();
 
+    MeatBallChooser choser;
+
     public void SetLoginButtonEvent(LoginDelegate _login) {
-        if (myRootUI == null) myRootUI = (UIFactory.instance.CreateObjectToScene("LoginButton"));
-        else UIFactory.instance.Instantiate(myRootUI, Vector3.zero);
         if (loginButton == null)
-            loginButton = myRootUI.GetComponentInChildren<Button>();
-        loginButton.onClick.AddListener(() => _login());
+        {
+            loginButton = (UIFactory.instance.CreateObjectToScene("LoginButton"))
+                .GetComponentInChildren<Button>();
+            loginButton.onClick.AddListener(() => _login());
+        }
+        else UIFactory.instance.Instantiate(myRootUI, Vector3.zero);
+        if (choser == null) {
+            choser = (UIFactory.instance.CreateObjectToScene("Chooser"))
+                .GetComponent<MeatBallChooser>();
+            choser.chooseColor = MeatBallDisplayManager.Instance.SetMeatBallColor;
+            choser.chooseSuit = MeatBallDisplayManager.Instance.SetMeatBallSuit;
+        }
     }
 }

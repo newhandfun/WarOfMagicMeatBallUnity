@@ -8,7 +8,7 @@ public class FigureBehavior : MonoBehaviour {
     protected GameObject myObject;
     public virtual GameObject GetObject() { return myObject; }
     protected Transform myTran;
-    public virtual Transform GetTrans() { return myTran; }
+    public virtual Transform GetTrans() { if (myTran == null) myTran = transform; return myTran; }
     //optional
     [SerializeField]
     protected BoxCollider weaponColider;
@@ -16,11 +16,14 @@ public class FigureBehavior : MonoBehaviour {
     [SerializeField]
     protected BoxCollider selfColider;
     public virtual BoxCollider GetSelfColider() { return selfColider; }
+    protected Rigidbody selfRigid;
+    public virtual Rigidbody GetRigidBody() { return selfRigid; }
 
     //Animator
     [SerializeField]
     protected Animator myAnimator;
     public virtual Animator GetAnimator() { return myAnimator; }
+    public virtual void SetAnimator(Animator _anim) { myAnimator = _anim; }
     public virtual void SetAnimatorInt(int _hash,int _value) { myAnimator.SetInteger(_hash,_value); }
     public virtual void SetAnimatorBool(int _hash, bool _value) { myAnimator.SetBool(_hash, _value);  }
     public virtual void SetAnimatorFloat(int _hash, float _value) { myAnimator.SetFloat(_hash, _value); }
@@ -51,7 +54,6 @@ public class FigureBehavior : MonoBehaviour {
     {
         CencleAttackAnimtion
     }
-    public static InokeMethod invokeMethod;
     protected virtual void InitialInvoke() {
         
     }
@@ -75,5 +77,26 @@ public class FigureBehavior : MonoBehaviour {
     //Anim
     public void CencleAttackAnimtion() { myAnimator.SetInteger("AttackType", 0); }
 
+    //Material
+    public virtual Vector2[] GetUV() {
+        return GetComponent<SkinnedMeshRenderer>().sharedMesh.uv;
+    }
 
+    public virtual void SetUV(List<Vector2> _nuvs) {
+        GetComponent<SkinnedMeshRenderer>().sharedMesh.SetUVs(0, _nuvs);
+    }
+
+    //Find
+    protected Transform FindObjectInChild(Transform _trans, string _name)
+    {
+        foreach (Transform child in _trans)
+        {
+            if (child.name == _name)
+                return child;
+            var result = FindObjectInChild(child, _name);
+            if (result != null)
+                return result;
+        }
+        return null;
+    }
 }

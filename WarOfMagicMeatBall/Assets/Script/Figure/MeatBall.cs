@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class MeatBall : Figure {
-
-	MeatBallSuit mySuit;
 
     public MeatBall(GameObject _object, FigureValue _value) : base(_object,_value)
     {
         attackNumber = 3;
+        myMBBehavior = (MeatBallBehavior)myBehavior;
     }
 
-    public void SetSuit(MeatBallSuit _suit){
-		mySuit = _suit;
-	}
+    private MeatBallBehavior myMBBehavior;
 
     public override void MoveTo(float _x, float _z)
     {
@@ -29,6 +27,29 @@ public class MeatBall : Figure {
     public override void UseSkill(int index)
     {
         throw new NotImplementedException();
+    }
+
+    //Material
+    public override void SetUV(Vector2 _uv)
+    {
+        var uvs = myBehavior.GetUV();
+        List<Vector2> nuvs = new List<Vector2>();
+        for (int i=0; i< uvs.Length;i++) {
+            nuvs.Add(_uv);
+        }
+        ((MeatBallBehavior)myBehavior).SetUV(nuvs);
+    }
+
+    private MeatBallSuit mySuit;
+
+    //Suit
+    public void WearSuit(MeatBallSuit _suit) {
+        if (!_suit.isCommonSuit(mySuit))
+        {
+            mySuit = _suit;
+            myMBBehavior.TakeOffSuit();
+            myMBBehavior.WearSuit(_suit.GetPartsObject());
+        }
     }
 
     public override void Start()

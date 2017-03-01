@@ -41,10 +41,15 @@ public class FigureFactory : IInstantiateFactory{
 
 
     //各資料夾底下的函式
-    public GameObject CreateMeatBallToScene()
+    public GameObject CreateMeatBallToScene(Vector3 _postion,Quaternion _rotation)
     {
         figureLocation = FigureLocation.MeatBall;
         var _name = "MeatBall";
-        return CreateObjectToScene(_name);
+        return CreateObjectToScene(_name, _postion,_rotation);
+    }
+    public GameObject CreateMeatBallToScene(string _name ,Vector3 _postion, Quaternion _rotation)
+    {
+        figureLocation = FigureLocation.MeatBall;
+        return CreateObjectToScene(_name, _postion, _rotation);
     }
 }

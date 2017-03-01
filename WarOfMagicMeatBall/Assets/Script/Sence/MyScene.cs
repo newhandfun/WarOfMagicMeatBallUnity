@@ -92,7 +92,7 @@ public class GongonVillageScene : VillageScence
     public override void OnSenceStart()
     {
         base.OnSenceStart();
-        WOMMGame.Instance.SetMainMeatBall();
+        WOMMGame.Instance.SetMainMeatBall(Vector3.zero);
         WOMMGame.Instance.ShowControllUI();
         Debug.Log("貢貢村");
     }

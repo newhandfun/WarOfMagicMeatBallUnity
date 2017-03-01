@@ -35,18 +35,29 @@ public class FigureSystem : WOMMSystem{
 
     }
 
-	public void Contruct(string _name,Vector3 _position){
-		
+	public GameObject ContructFigure(string _name,Vector3 _position,Quaternion _rotation){
+        return FigureFactory.instance.CreateObjectToScene(_name,_position,_rotation);
 	}
+    public void ContructFigureAsMain(string _name, Vector3 _position, Quaternion _rotation)
+    {
+        FigureFactory.instance.CreateObjectToScene(_name, _position, _rotation);
+    }
 
-    public void ContructMeatBallAsMain(Vector3 _position)
+    public void ContructMeatBallAsMain(Vector3 _position,Quaternion _rotaion)
     {
         if (mainMeatBall == null)
         {
-            mainMeatBall = FigureFactory.instance.CreateMeatBallToScene();
+            mainMeatBall = FigureFactory.instance.CreateMeatBallToScene(_position,_rotaion);
             main = (new MeatBall(mainMeatBall,new MeatBallValue(100,100,10)))as Figure;
+        }
+    }
 
-            
+    public void ContructMeatBallAsMain(string _name,Vector3 _position, Quaternion _rotaion)
+    {
+        if (mainMeatBall == null)
+        {
+            mainMeatBall = FigureFactory.instance.CreateMeatBallToScene(_name, _position, _rotaion);
+            main = (new MeatBall(mainMeatBall, new MeatBallValue(100, 100, 10))) as Figure;
         }
     }
 }

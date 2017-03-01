@@ -15,15 +15,21 @@ public abstract class IInstantiateFactory {
         return myObjectFactory;
     }
 
-    public abstract GameObject CreateObjectToScene(string _name);
-    public abstract GameObject CreateObjectToScene(string _name,Vector3 _position);
-    public abstract GameObject CreateObjectToScene(string _name, Vector3 _position,Quaternion _rotation);
+    public abstract GameObject CreateObjectToScene(string _name, Vector3 _position, Quaternion _rotation);
 
-    public virtual void Instantiate(GameObject _object, Vector3 _position, Quaternion _rotation) {
-        GameObject.Instantiate(_object,_position,_rotation);
+
+    public virtual GameObject CreateObjectToScene(string _name) {
+        return CreateObjectToScene(_name,Vector3.zero,Quaternion.Euler(Vector3.zero));
     }
-    public virtual void Instantiate(GameObject _object, Vector3 _position)
+    public virtual GameObject CreateObjectToScene(string _name,Vector3 _position)
     {
-        GameObject.Instantiate(_object, _position, Quaternion.Euler(Vector3.zero));
+        return CreateObjectToScene(_name, _position, Quaternion.Euler(Vector3.zero));
+    }
+    public virtual GameObject Instantiate(GameObject _object, Vector3 _position, Quaternion _rotation) {
+        return GameObject.Instantiate(_object,_position,_rotation);
+    }
+    public virtual GameObject Instantiate(GameObject _object, Vector3 _position)
+    {
+        return GameObject.Instantiate(_object, _position, Quaternion.Euler(Vector3.zero));
     }
 }

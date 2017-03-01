@@ -90,6 +90,7 @@ public class UIFactory : IInstantiateFactory
                 break;
         }
 
+        UIRect.sizeDelta = Vector2.zero;
         UIRect.localPosition = _position;
         UIRect.rotation = _rotation;
 

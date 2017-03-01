@@ -1,10 +1,14 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties StartupItem="WarOfMagicMeatBall.CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Figure\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\UI\WOMMUserInterface.cs">
     <Files>
-      <File FileName="Assets\Script\Figure\Player.cs" Line="9" Column="3" />
-      <File FileName="Assets\Script\Figure\Figure.cs" Line="20" Column="9" />
-      <File FileName="Assets\Script\UI\JoystickController.cs" Line="28" Column="39" />
+      <File FileName="Assets\Script\Figure\Figure.cs" Line="17" Column="2" />
+      <File FileName="Assets\Script\Figure\ConbatSystem\Combat.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\System\WOMMGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\UI\WOMMUserInterface.cs" Line="31" Column="33" />
+      <File FileName="Assets\Script\System\WOMMSystem.cs" Line="69" Column="19" />
+      <File FileName="Assets\Script\System\FigureBuilder\FigureBuilder.cs" Line="15" Column="37" />
+      <File FileName="Assets\Script\System\FigureFactory.cs" Line="25" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -97,6 +97,8 @@ public class WOMMGame {
     public void ShowLoginUI(LogInUI.LoginDelegate _login) {
         myLoginUI.Inititalize();
         myLoginUI.SetLoginButtonEvent(_login);
+        myFigureSystem.ContructMeatBallAsMain("LoginMeatBall",new Vector3(1.83f,-1.22f,-6.09f),Quaternion.Euler(Vector3.zero));
+        MeatBallDisplayManager.Instance.SetMeatBall(myFigureSystem.main as MeatBall);
     }
 
     public void HideLoginUI() {
@@ -116,9 +118,9 @@ public class WOMMGame {
 
     #region MainFigure
 
-    public void SetMainMeatBall() {
-        myFigureSystem.ContructMeatBallAsMain(Vector3.zero);
-        SetCameraLook(myFigureSystem.main.GetTrans());
+    public void SetMainMeatBall(Vector3 _position) {
+        myFigureSystem.ContructMeatBallAsMain(_position,Quaternion.Euler(Vector3.zero));
+        //SetCameraLook(myFigureSystem.main.GetTrans());
     }
 
     public void DeleteMain(){
