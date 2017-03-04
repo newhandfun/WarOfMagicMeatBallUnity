@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FigureBehavior : MonoBehaviour {
+public class FigureBehavior : Photon.MonoBehaviour {
 
     //Component
     protected GameObject myObject;
@@ -28,6 +28,8 @@ public class FigureBehavior : MonoBehaviour {
     public virtual void SetAnimatorBool(int _hash, bool _value) { myAnimator.SetBool(_hash, _value);  }
     public virtual void SetAnimatorFloat(int _hash, float _value) { myAnimator.SetFloat(_hash, _value); }
 
+    protected RuntimeAnimatorController normalAnimator;
+    public virtual void SetMoveAnimator(RuntimeAnimatorController _AOC) { normalAnimator = _AOC; }
 
     //Base Function
     public void LookAt(Vector3 _direction) {
@@ -35,13 +37,15 @@ public class FigureBehavior : MonoBehaviour {
     }
 
     //State Delegate
-    public void Awake() {
+    public virtual void Awake() {
         myObject = gameObject;
         myTran = transform;
         selfColider = GetComponent<BoxCollider>();
         myAnimator = GetComponent<Animator>();
 
         InitialInvoke();
+
+        normalAnimator = Resources.Load("Animator/Figure") as RuntimeAnimatorController;
     }
 
     public virtual void Update() {
@@ -58,6 +62,8 @@ public class FigureBehavior : MonoBehaviour {
         
     }
     public virtual void CallInvoke(string _funtionName,float _time) {
+        if (!photonView.isMine)
+            return;
         if (!invokeNow.ContainsKey(_funtionName))
         {
             invokeNow.Add(_funtionName, false);
@@ -76,6 +82,10 @@ public class FigureBehavior : MonoBehaviour {
 
     //Anim
     public void CencleAttackAnimtion() { myAnimator.SetInteger("AttackType", 0); }
+
+    public void Moveable() {
+        GetAnimator().runtimeAnimatorController = normalAnimator;
+    }
 
     //Material
     public virtual Vector2[] GetUV() {

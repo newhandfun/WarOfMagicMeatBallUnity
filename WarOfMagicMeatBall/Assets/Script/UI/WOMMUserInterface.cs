@@ -18,17 +18,20 @@ using UnityEngine.UI;
 		myGame = _game;
 	}
 
-	public virtual void Show(){
+	public virtual bool Show(){
+        if (myRootUI == null) return false;
 		myRootUI.SetActive (true);
 		isActive = true;
+        return true;
 	}
 
-	public virtual void Hide(){
-		myRootUI.SetActive (false);
-		isActive = false;
-	}
+	public virtual bool Hide(){
+        if (myRootUI == null) return false;
+        myRootUI.SetActive (false);
+        return true;
+    }
 
-	public virtual void Inititalize(){}
+    public virtual void Inititalize(){}
 	public virtual void Release(){}
 	public virtual void Update(){}
 }
@@ -144,23 +147,63 @@ using UnityEngine.UI;
 public class LogInUI : WOMMUserInterface {
 
     Button loginButton;
-    public delegate void LoginDelegate();
 
     MeatBallChooser choser;
 
-    public void SetLoginButtonEvent(LoginDelegate _login) {
-        if (loginButton == null)
-        {
-            loginButton = (UIFactory.instance.CreateObjectToScene("LoginButton"))
-                .GetComponentInChildren<Button>();
-            loginButton.onClick.AddListener(() => _login());
-        }
-        else UIFactory.instance.Instantiate(myRootUI, Vector3.zero);
-        if (choser == null) {
-            choser = (UIFactory.instance.CreateObjectToScene("Chooser"))
-                .GetComponent<MeatBallChooser>();
-            choser.chooseColor = MeatBallDisplayManager.Instance.SetMeatBallColor;
-            choser.chooseSuit = MeatBallDisplayManager.Instance.SetMeatBallSuit;
+    public override void Inititalize()
+    {
+        if (myRootUI == null) {
+            myRootUI = UIFactory.instance.CreateObjectToScene("Base",Vector3.zero);
+            myRootUI.name = "LoginUI";
         }
     }
+
+    public void SetLoginButtonEvent(DelegateKind.VoidDelegate _login) {
+        if (loginButton == null)
+        {
+            var loginObj = (UIFactory.instance.CreateObjectToScene("LoginButton"));
+            loginObj.transform.SetParent(myRootUI.transform);
+            loginButton = loginObj.GetComponentInChildren<MyButton>();
+        }
+        else myRootUI.SetActive(true);
+        loginButton.onClick.AddListener(() => _login());
+    }
+}
+
+public class ChooseUI : WOMMUserInterface{
+
+    MeatBall meatBall = null;
+    MeatBallChooser chooser = null;
+    MyButton nextButton = null;
+
+    public override void Inititalize()
+    {
+        if (myRootUI == null) {
+            myRootUI = UIFactory.instance.CreateObjectToScene("Chooser") as GameObject;
+        }
+        myRootUI.SetActive(true);
+
+        InitialChooserUI();
+    }
+
+    public void SetMeatBall(MeatBall _MB) {
+        if (_MB != null)
+        {
+            meatBall = _MB;
+            chooser.chooseColor = meatBall.SetMeatBallColor;
+            chooser.chooseSuit = meatBall.SetMeatBallSuit;
+        }
+        else
+            Debug.Log("No MeatBall to pick color/suit,UI will no Work");
+    }
+
+    public void InitialChooserUI() {
+        chooser = myRootUI.GetComponent<MeatBallChooser>();
+        nextButton = myRootUI.GetComponentInChildren<MyButton>();
+    }
+
+    public void SetNextEvent(DelegateKind.VoidDelegate _next) {
+        nextButton.onClick.AddListener(() => _next());
+    }
+
 }

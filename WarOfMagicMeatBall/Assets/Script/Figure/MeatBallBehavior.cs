@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class MeatBallBehavior : FigureBehavior {
 
+    public override void Awake()
+    {
+        base.Awake();
+
+        standByAnimator = Resources.Load("Animator/Login") as RuntimeAnimatorController;
+    }
+
+    #region Suit
     [SerializeField]
     protected GameObject body;
 
@@ -15,6 +23,8 @@ public class MeatBallBehavior : FigureBehavior {
     static string[] partsParentName = {
         "weapon_IK_R",
         "weapon_IK_L",
+        "hand_L",
+        "hand_R",
         "feet_L",
         "feet_R",
         "cloak",
@@ -22,8 +32,9 @@ public class MeatBallBehavior : FigureBehavior {
         "body"
     };
 
+
     
-    public void WearSuit(GameObject[] _parts) {
+    public void DressUp(GameObject[] _parts) {
         if (_parts.Length != partsParentName.Length) {
             Debug.Log("可佩帶部位與相對應骨頭數量不符!請再三確認!");
         }
@@ -44,13 +55,6 @@ public class MeatBallBehavior : FigureBehavior {
         }
     }
 
-    public void TakeOffSuit() {
-        if(partsObject != null)
-        foreach (GameObject go in partsObject) {
-            Destroy(go);
-        }
-    }
-
     [ContextMenu("設定套裝骨頭")]
     public void FindWearBone() {
         partsParent = new GameObject[partsParentName.Length];
@@ -63,10 +67,11 @@ public class MeatBallBehavior : FigureBehavior {
             }
             catch (Exception e) { Debug.Log("取得套裝骨架有問題!\n:" + e); }
         }
-    } 
+    }
 
+    #endregion
 
-
+    #region UV
     public override Vector2[] GetUV()
     {
         return body.GetComponent<SkinnedMeshRenderer>().sharedMesh.uv;
@@ -77,7 +82,20 @@ public class MeatBallBehavior : FigureBehavior {
         body.GetComponent<SkinnedMeshRenderer>().sharedMesh.SetUVs(0, _nuvs);
     }
 
+    #endregion
 
+    #region Animation
+    RuntimeAnimatorController standByAnimator;
+
+    public void StandByAnimator() {
+        GetAnimator().runtimeAnimatorController = standByAnimator;
+    }
+
+    public void NormalAnimator() {
+        GetAnimator().runtimeAnimatorController = normalAnimator;
+    }
+    #endregion
+    #region OnUnity
     [ContextMenu("設定零件")]
     public void SetComponent() {
         if (GetComponent<Rigidbody>() == null)
@@ -100,4 +118,5 @@ public class MeatBallBehavior : FigureBehavior {
         SetAnimator(GetComponent<Animator>());
         
     }
+    #endregion
 }

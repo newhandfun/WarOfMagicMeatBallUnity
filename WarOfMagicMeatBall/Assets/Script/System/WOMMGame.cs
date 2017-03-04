@@ -23,6 +23,7 @@ public class WOMMGame {
     ControllUI myControllUI;
     EventUI myEventUI;
     LogInUI myLoginUI;
+    ChooseUI myMeatBallPickerUI;
 
     /// <summary>
     /// The instance.
@@ -54,6 +55,7 @@ public class WOMMGame {
         myStageUI = new StageUI();
         myEventUI = new EventUI();
         myLoginUI = new LogInUI();
+        myMeatBallPickerUI = new ChooseUI();
 
         //System Deoendance inject
 
@@ -79,26 +81,40 @@ public class WOMMGame {
         myEventUI.Update();
     }
 
-    #region SetCameraLook
-    public void SetCameraLook(Transform _target) {
+    #region Camera
+    public void SetCameraLook(Transform _target,Vector3 _direct) {
         if (Camera.main == null)
         {
             FigureFactory.instance.figureLocation = FigureFactory.FigureLocation.Other;
             FigureFactory.instance.CreateObjectToScene("Camera");
         }
+        else if (Camera.main.GetComponent<MyCamera>() == null){
+            Camera.main.gameObject.AddComponent<MyCamera>();
+        }
+        GameObject.DontDestroyOnLoad(Camera.main);
         var camera = Camera.main.GetComponent<MyCamera>();
         if (camera != null) {
-            camera.myTarget =_target;
+            camera.SetCameraTarget(_target,_direct);
+        }
+    }
+    public void DestroyCamera() {
+        if (Camera.main != null) {
+            GameObject.Destroy(Camera.main);    
         }
     }
     #endregion
 
     #region Login
-    public void ShowLoginUI(LogInUI.LoginDelegate _login) {
-        myLoginUI.Inititalize();
-        myLoginUI.SetLoginButtonEvent(_login);
-        myFigureSystem.ContructMeatBallAsMain("LoginMeatBall",new Vector3(1.83f,-1.22f,-6.09f),Quaternion.Euler(Vector3.zero));
-        MeatBallDisplayManager.Instance.SetMeatBall(myFigureSystem.main as MeatBall);
+    /// <summary>
+    /// Call By LoginScene,link login event and UI;
+    /// </summary>
+    /// <param name="_login"></param>
+    public void ShowLoginUI(DelegateKind.VoidDelegate _login) {
+        if (!myLoginUI.Show())
+        {
+            myLoginUI.Inititalize();
+            myLoginUI.SetLoginButtonEvent(_login);
+        }
     }
 
     public void HideLoginUI() {
@@ -106,14 +122,32 @@ public class WOMMGame {
     }
     #endregion
 
+    #region Chooser
+    public void ShowChooserUI(DelegateKind.VoidDelegate _next) {
+        if (myMeatBallPickerUI.Show())
+            return;
+        myMeatBallPickerUI.Inititalize();
+        myMeatBallPickerUI.Show();
+        myMeatBallPickerUI.SetMeatBall((MeatBall)myFigureSystem.main);
+        myMeatBallPickerUI.SetNextEvent(_next);
+    }
+    public void HideChooserUI() {
+        myMeatBallPickerUI.Hide();
+    }
+    #endregion
+
     #region Controll
     public void ShowControllUI() {
-        myControllUI.Inititalize();
+        if (!myControllUI.Show())
+        {
+            myControllUI.Inititalize();
+        }
     }
 
     public void HideControllUI() {
         myControllUI.Hide();
     }
+
     #endregion
 
     #region MainFigure
@@ -123,9 +157,29 @@ public class WOMMGame {
         //SetCameraLook(myFigureSystem.main.GetTrans());
     }
 
+    public GameObject GetMainFigure() {
+        return myFigureSystem.main.GetObject();
+    }
+
     public void DeleteMain(){
 		
 	}
+
+    public void SetMainMeatBallStandBy() {
+        if (myFigureSystem.main as MeatBall != null)
+        {
+            ((MeatBall)myFigureSystem.main).StandByAnimator();
+        }
+    }
+    public void SetMainMeatBallNormal() {
+        if (myFigureSystem.main as MeatBall != null)
+        {
+            ((MeatBall)myFigureSystem.main).NoramlAnimator();
+        }
+    }
+
+    public void LetMainMoveable() {
+    }
     #endregion
 
     public void AddMoster(){

@@ -91,6 +91,7 @@ ModelImporter:
     100166: Lamp.002
     100168: thirdperson
     100170: MeatBall
+    100172: LGlove
     400000: amerture
     400002: arm_1_L
     400004: arm_1_R
@@ -177,6 +178,7 @@ ModelImporter:
     400166: Lamp.002
     400168: thirdperson
     400170: MeatBall
+    400172: LGlove
     2300000: //RootNode
     2300002: meatball03
     2300004: bone_eye
@@ -187,6 +189,7 @@ ModelImporter:
     2300014: bone_root
     2300016: bone_weapon_L
     2300018: bone_weapon_R
+    2300020: LGlove
     3300000: //RootNode
     3300002: meatball03
     3300004: bone_eye
@@ -197,6 +200,7 @@ ModelImporter:
     3300014: bone_root
     3300016: bone_weapon_L
     3300018: bone_weapon_R
+    3300020: LGlove
     4300000: "\u5E73\u9762"
     4300002: handandleg
     4300004: meatball02_retop
@@ -214,6 +218,7 @@ ModelImporter:
     4300028: bone_pole
     4300030: bone_weapon_L
     4300032: MeatBall
+    4300034: LGlove
     7400000: Tpose
     7400002: Stand
     7400004: ForwardWalk
@@ -293,7 +298,7 @@ ModelImporter:
   materials:
     importMaterials: 1
     materialName: 1
-    materialSearch: 1
+    materialSearch: 2
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -438,7 +443,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -572,7 +577,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -618,6 +623,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -625,60 +684,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/cloak
-        weight: 1
-      - path: amerture/root/hip/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/hat
-        weight: 1
-      - path: amerture/root/hip/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -706,7 +711,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -982,7 +987,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -1028,6 +1033,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -1035,60 +1094,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/cloak
-        weight: 1
-      - path: amerture/root/hip/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/hat
-        weight: 1
-      - path: amerture/root/hip/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -1116,7 +1121,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -1162,6 +1167,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -1169,60 +1228,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/cloak
-        weight: 1
-      - path: amerture/root/hip/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/hat
-        weight: 1
-      - path: amerture/root/hip/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -1250,7 +1255,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -1587,7 +1592,7 @@ ModelImporter:
       name: Hurt
       takeName: Hurt
       firstFrame: 0
-      lastFrame: 29
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1629,6 +1634,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -1636,68 +1695,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/body
-        weight: 1
-      - path: amerture/root/hip/body/cloak
-        weight: 1
-      - path: amerture/root/hip/body/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/body/head
-        weight: 1
-      - path: amerture/root/hip/body/head/hat
-        weight: 1
-      - path: amerture/root/hip/body/head/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -1725,7 +1722,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -1771,6 +1768,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -1778,68 +1829,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/body
-        weight: 1
-      - path: amerture/root/hip/body/cloak
-        weight: 1
-      - path: amerture/root/hip/body/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/body/head
-        weight: 1
-      - path: amerture/root/hip/body/head/hat
-        weight: 1
-      - path: amerture/root/hip/body/head/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -1867,7 +1856,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -1913,6 +1902,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -1920,68 +1963,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/body
-        weight: 1
-      - path: amerture/root/hip/body/cloak
-        weight: 1
-      - path: amerture/root/hip/body/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/body/head
-        weight: 1
-      - path: amerture/root/hip/body/head/hat
-        weight: 1
-      - path: amerture/root/hip/body/head/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -2009,7 +1990,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -2069,6 +2050,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -2076,68 +2111,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/body
-        weight: 1
-      - path: amerture/root/hip/body/cloak
-        weight: 1
-      - path: amerture/root/hip/body/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/body/head
-        weight: 1
-      - path: amerture/root/hip/body/head/hat
-        weight: 1
-      - path: amerture/root/hip/body/head/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -2165,7 +2138,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -2225,6 +2198,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -2232,68 +2259,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/body
-        weight: 1
-      - path: amerture/root/hip/body/cloak
-        weight: 1
-      - path: amerture/root/hip/body/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/body/head
-        weight: 1
-      - path: amerture/root/hip/body/head/hat
-        weight: 1
-      - path: amerture/root/hip/body/head/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -2321,7 +2286,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1
@@ -6804,21 +6769,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.51489365
-        functionName: AttackColliderOn
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.81276596
-        functionName: AttackColliderOff
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask:
       - path: 
         weight: 1
@@ -6834,6 +6785,60 @@ ModelImporter:
         weight: 1
       - path: amerture/root/arm_pole_R/arm_pole_R_end
         weight: 1
+      - path: amerture/root/body
+        weight: 1
+      - path: amerture/root/body/arm_1_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L
+        weight: 1
+      - path: amerture/root/body/arm_1_L/arm_2_L/hand_L/hand_L_end
+        weight: 1
+      - path: amerture/root/body/arm_1_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R
+        weight: 1
+      - path: amerture/root/body/arm_1_R/arm_2_R/hand_R/hand_R_end
+        weight: 1
+      - path: amerture/root/body/cloak
+        weight: 1
+      - path: amerture/root/body/cloak/cloak_end
+        weight: 1
+      - path: amerture/root/body/eye_L
+        weight: 1
+      - path: amerture/root/body/eye_L/eye_L_end
+        weight: 1
+      - path: amerture/root/body/eye_R
+        weight: 1
+      - path: amerture/root/body/eye_R/eye_R_end
+        weight: 1
+      - path: amerture/root/body/hat
+        weight: 1
+      - path: amerture/root/body/hat/hat_end
+        weight: 1
+      - path: amerture/root/body/leg_1_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L
+        weight: 1
+      - path: amerture/root/body/leg_1_L/leg_2_L/feet_L/feet_L_end
+        weight: 1
+      - path: amerture/root/body/leg_1_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R
+        weight: 1
+      - path: amerture/root/body/leg_1_R/leg_2_R/feet_R/feet_R_end
+        weight: 1
+      - path: amerture/root/body/mouth
+        weight: 1
+      - path: amerture/root/body/mouth/mouth_end
+        weight: 1
       - path: amerture/root/feet_pole_L
         weight: 1
       - path: amerture/root/feet_pole_L/feet_pole_L_end
@@ -6841,68 +6846,6 @@ ModelImporter:
       - path: amerture/root/feet_pole_R
         weight: 1
       - path: amerture/root/feet_pole_R/feet_pole_R_end
-        weight: 1
-      - path: amerture/root/hip
-        weight: 1
-      - path: amerture/root/hip/body
-        weight: 1
-      - path: amerture/root/hip/body/cloak
-        weight: 1
-      - path: amerture/root/hip/body/cloak/cloak_end
-        weight: 1
-      - path: amerture/root/hip/body/head
-        weight: 1
-      - path: amerture/root/hip/body/head/hat
-        weight: 1
-      - path: amerture/root/hip/body/head/hat/hat_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_L/arm_1_L/arm_2_L/hand_L/hand_L_end
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R
-        weight: 1
-      - path: amerture/root/hip/body/shoulder_R/arm_1_R/arm_2_R/hand_R/hand_R_end
-        weight: 1
-      - path: amerture/root/hip/eye_L
-        weight: 1
-      - path: amerture/root/hip/eye_L/eye_L_end
-        weight: 1
-      - path: amerture/root/hip/eye_R
-        weight: 1
-      - path: amerture/root/hip/eye_R/eye_R_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L
-        weight: 1
-      - path: amerture/root/hip/leg_1_L/leg_2_L/feet_L/feet_L_end
-        weight: 1
-      - path: amerture/root/hip/leg_1_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R
-        weight: 1
-      - path: amerture/root/hip/leg_1_R/leg_2_R/feet_R/feet_R_end
-        weight: 1
-      - path: amerture/root/hip/mouth
-        weight: 1
-      - path: amerture/root/hip/mouth/mouth_end
         weight: 1
       - path: amerture/root/leg_IK_L
         weight: 1
@@ -6930,7 +6873,7 @@ ModelImporter:
         weight: 1
       - path: handandleg
         weight: 1
-      - path: meatball03
+      - path: MeatBall
         weight: 1
       - path: mouse
         weight: 1

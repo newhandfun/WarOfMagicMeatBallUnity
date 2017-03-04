@@ -8,7 +8,7 @@ public class MeatBallSuitFactory : IInstantiateFactory
 {
     public static MeatBallSuitFactory instance = new MeatBallSuitFactory();
 
-    Dictionary<string, GameObject[]> MBSuitSceneDictionary = new Dictionary<string, GameObject[]>();
+    Dictionary<string, MeatBallSuit> MBSuitSceneDictionary = new Dictionary<string, MeatBallSuit>();
     Dictionary<string, MeatBallSuit> MBSuitDictionary = new Dictionary<string, MeatBallSuit>();
 
     GameObject MeatBallSuitManager = null;
@@ -18,7 +18,7 @@ public class MeatBallSuitFactory : IInstantiateFactory
         Orgin
         , Warrior
         , BlackSmith
-        , Archor
+        , Archer
         //,Farmer
         //,SpearFighter
         //,OldSworder
@@ -26,6 +26,8 @@ public class MeatBallSuitFactory : IInstantiateFactory
     string[] partsName = {
         "RWeapon",
         "LWeapon",
+        "LGlove",
+        "RGlove",
         "LShoes",
         "RShoes",
         "Cloak",
@@ -50,7 +52,7 @@ public class MeatBallSuitFactory : IInstantiateFactory
                     if (trans != null)
                         partsObject[i] = trans.gameObject;
                 }
-                var MB = new MeatBallSuit(name, partsObject, icon);
+                var MB = new MeatBallSuit(name, partsObject, icon,RecycleSuit);
                 MBSuitDictionary.Add(name, MB);
             }
             else
@@ -67,26 +69,34 @@ public class MeatBallSuitFactory : IInstantiateFactory
 
         if (!isHavingSuit(_name)) return null;
 
-        if (MBSuitSceneDictionary.ContainsKey(_name)) {
-            if(MBSuitSceneDictionary[_name]!=null)
-                return new MeatBallSuit(_name, MBSuitSceneDictionary[_name], MBSuitDictionary[_name].icon);
-        }
-        else {
-            MBSuitSceneDictionary.Remove(_name);
-        }
+        MeatBallSuit newSuit = null;
 
-        var parts = new GameObject[partsName.Length];
-        for (int i = 0; i < partsName.Length; i++)
+        if (MBSuitSceneDictionary.ContainsKey(_name))
+            return MBSuitSceneDictionary[_name];
+        else
         {
-            if(MBSuitDictionary[_name].GetPartsObject()[i] !=null)
-            parts[i] = 
-                 Instantiate(MBSuitDictionary[_name].GetPartsObject()[i],Vector3.zero)
-                    as GameObject;
+            newSuit = MBSuitDictionary[_name].CopySuit();
+            for (int i=0; i< newSuit.GetPartsObject().Length;i++) {
+                if(newSuit.GetPartsObject()[i]!=null)
+                    newSuit.GetPartsObject()[i] = Instantiate(newSuit.GetPartsObject()[i], Vector3.zero);
+            }
+            MBSuitSceneDictionary.Add(newSuit.suitName,newSuit);
+            return newSuit;
         }
+    }
 
-        MBSuitSceneDictionary.Add(_name,parts);
-
-        return new MeatBallSuit(_name,MBSuitSceneDictionary[_name],MBSuitDictionary[_name].icon);
+    public void RecycleSuit(GameObject[] _objects) {
+        if (MeatBallSuitManager == null)
+        {
+            MeatBallSuitManager = Instantiate(new GameObject(), Vector3.zero);
+            MeatBallSuitManager.name = "MeatBallSuitManager";
+            GameObject.DontDestroyOnLoad(MeatBallSuitManager);
+        }
+        foreach (GameObject go in _objects) {
+            if (go != null)
+                go.transform.SetParent(MeatBallSuitManager.transform);
+        }
+        
     }
 
     public override GameObject CreateObjectToScene(string _name)

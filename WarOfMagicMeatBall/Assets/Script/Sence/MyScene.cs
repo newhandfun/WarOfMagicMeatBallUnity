@@ -43,7 +43,9 @@ public class LoginScene : MyScene{
 	public override void OnSenceStart ()
 	{
         WOMMGame.Instance.ShowLoginUI(Login);
-	}
+        WOMMGame.Instance.SetMainMeatBall(new Vector3(1.88f, 0f, -6.09f));
+        WOMMGame.Instance.SetMainMeatBallStandBy();
+    }
 
 	public override void OnSenceUpdate ()
 	{
@@ -52,10 +54,35 @@ public class LoginScene : MyScene{
 
     public override void OnSenceExit()
     {
-        
+        WOMMGame.Instance.HideLoginUI();
     }
 
     private void Login() {
+        mySceneManager.SetScene(new MeatBallChooserScene(mySceneManager));
+    }
+}
+
+public class MeatBallChooserScene : MyScene{
+    public MeatBallChooserScene(MySceneManager _mySceneManager) : base(_mySceneManager)
+    {
+        SceneName = "MeatBallPickScene";
+    }
+
+    public override void OnSenceExit()
+    {
+        WOMMGame.Instance.HideChooserUI();
+    }
+
+    public override void OnSenceStart()
+    {
+        WOMMGame.Instance.ShowChooserUI(Complete);
+    }
+
+    public override void OnSenceUpdate()
+    {
+    }
+
+    public void Complete() {
         mySceneManager.SetScene(new GongonVillageScene(mySceneManager));
     }
 }
@@ -72,12 +99,12 @@ public class VillageScence : MyScene{
 
     public override void OnSenceStart ()
 	{
-		
-	}
+        WOMMGame.Instance.SetMainMeatBallNormal();
+        WOMMGame.Instance.SetCameraLook(WOMMGame.Instance.GetMainFigure().transform,Vector3.forward);
+    }
 
     public override void OnSenceUpdate()
     {
-        WOMMGame.Instance.HideLoginUI();
     }
 }
 
@@ -92,8 +119,10 @@ public class GongonVillageScene : VillageScence
     public override void OnSenceStart()
     {
         base.OnSenceStart();
-        WOMMGame.Instance.SetMainMeatBall(Vector3.zero);
+
         WOMMGame.Instance.ShowControllUI();
         Debug.Log("貢貢村");
+
+        WOMMGame.Instance.LetMainMoveable();
     }
 }

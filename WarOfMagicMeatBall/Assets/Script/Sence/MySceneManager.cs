@@ -13,8 +13,7 @@ public class MySceneManager {
 	public virtual void OnStart(){
 		myScene = new LoginScene(this);
 		myScene.OnSenceStart ();
-        SceneManager.sceneLoaded += OnSceneStart; ;
-
+        //SceneManager.sceneLoaded += OnSceneStart; ;
     }
 
     private void OnSceneStart(Scene arg0, LoadSceneMode arg1)
@@ -29,5 +28,6 @@ public class MySceneManager {
     public virtual void SetScene(MyScene _scene) {
         myScene.OnSenceExit();
         myScene = _scene;
+        myScene.OnSenceStart();
     }
 }
