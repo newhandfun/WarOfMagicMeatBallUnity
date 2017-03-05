@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FigureBehavior : Photon.MonoBehaviour {
 
+    #region Property
     //Component
     protected GameObject myObject;
     public virtual GameObject GetObject() { return myObject; }
@@ -24,35 +25,25 @@ public class FigureBehavior : Photon.MonoBehaviour {
     protected Animator myAnimator;
     public virtual Animator GetAnimator() { return myAnimator; }
     public virtual void SetAnimator(Animator _anim) { myAnimator = _anim; }
-    public virtual void SetAnimatorInt(int _hash,int _value) { myAnimator.SetInteger(_hash,_value); }
-    public virtual void SetAnimatorBool(int _hash, bool _value) { myAnimator.SetBool(_hash, _value);  }
-    public virtual void SetAnimatorFloat(int _hash, float _value) { myAnimator.SetFloat(_hash, _value); }
 
     protected RuntimeAnimatorController normalAnimator;
     public virtual void SetMoveAnimator(RuntimeAnimatorController _AOC) { normalAnimator = _AOC; }
+    #endregion
 
-    //Base Function
+    #region ConnectionFunction
+    protected PhotonView myPhotonView;
+    protected bool IsNotMine() {
+        return (myPhotonView.isMine==false && PhotonNetwork.connected == true);
+    }
+    #endregion
+
+    #region Base Function
     public void LookAt(Vector3 _direction) {
         myTran.LookAt(_direction);
     }
+    #endregion
 
-    //State Delegate
-    public virtual void Awake() {
-        myObject = gameObject;
-        myTran = transform;
-        selfColider = GetComponent<BoxCollider>();
-        myAnimator = GetComponent<Animator>();
-
-        InitialInvoke();
-
-        normalAnimator = Resources.Load("Animator/Figure") as RuntimeAnimatorController;
-    }
-
-    public virtual void Update() {
-
-    }
-
-    //Invoke 
+    #region Invoke
     Dictionary<string, bool> invokeNow = new Dictionary<string, bool>();
     public enum InokeMethod
     {
@@ -62,7 +53,7 @@ public class FigureBehavior : Photon.MonoBehaviour {
         
     }
     public virtual void CallInvoke(string _funtionName,float _time) {
-        if (!photonView.isMine)
+        if (IsNotMine())
             return;
         if (!invokeNow.ContainsKey(_funtionName))
         {
@@ -79,15 +70,22 @@ public class FigureBehavior : Photon.MonoBehaviour {
 
         Invoke(_funtionName,_time);
     }
+    #endregion
 
-    //Anim
+    #region Anim
+    public virtual void SetAnimatorInt(int _hash, int _value) { myAnimator.SetInteger(_hash, _value); }
+    public virtual void SetAnimatorBool(int _hash, bool _value) { myAnimator.SetBool(_hash, _value); }
+    public virtual void SetAnimatorFloat(int _hash, float _value) { myAnimator.SetFloat(_hash, _value); }
     public void CencleAttackAnimtion() { myAnimator.SetInteger("AttackType", 0); }
+
+
 
     public void Moveable() {
         GetAnimator().runtimeAnimatorController = normalAnimator;
     }
+    #endregion
 
-    //Material
+    #region Material&UV
     public virtual Vector2[] GetUV() {
         return GetComponent<SkinnedMeshRenderer>().sharedMesh.uv;
     }
@@ -95,8 +93,9 @@ public class FigureBehavior : Photon.MonoBehaviour {
     public virtual void SetUV(List<Vector2> _nuvs) {
         GetComponent<SkinnedMeshRenderer>().sharedMesh.SetUVs(0, _nuvs);
     }
+    #endregion
 
-    //Find
+    #region Extend Mono Function
     protected Transform FindObjectInChild(Transform _trans, string _name)
     {
         foreach (Transform child in _trans)
@@ -108,5 +107,25 @@ public class FigureBehavior : Photon.MonoBehaviour {
                 return result;
         }
         return null;
+    }
+    #endregion
+
+    //State Delegate
+    public virtual void Awake()
+    {
+        myObject = gameObject;
+        myTran = transform;
+        selfColider = GetComponent<BoxCollider>();
+        myAnimator = GetComponent<Animator>();
+
+        InitialInvoke();
+
+        normalAnimator = Resources.Load("Animator/Figure") as RuntimeAnimatorController;
+        myPhotonView = GetComponent<PhotonView>();
+    }
+
+    public virtual void Update()
+    {
+
     }
 }

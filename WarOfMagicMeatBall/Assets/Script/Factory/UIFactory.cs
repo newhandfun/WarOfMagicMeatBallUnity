@@ -26,7 +26,7 @@ public class UIFactory : IInstantiateFactory
         {
             if (usuallyRefreshCanvas == null)
             {
-                usuallyRefreshCanvas = UnityEngine.Object.Instantiate(GetObjectFactory().LoadObject(ResrouceFactory.UILocation + "Canvas")) as GameObject;
+                usuallyRefreshCanvas = GetLocalFactory().Instantiate(ResrouceFactory.UILocation + "Canvas", Vector3.zero);
                 usuallyRefreshCanvas.name = "usuallyRefreshCanvas";
                 GameObject.DontDestroyOnLoad(usuallyRefreshCanvas);
             }
@@ -40,7 +40,7 @@ public class UIFactory : IInstantiateFactory
         {
             if (suddenlyRefreshCanvas == null)
             {
-                suddenlyRefreshCanvas = UnityEngine.Object.Instantiate(GetObjectFactory().LoadObject(ResrouceFactory.UILocation + "Canvas")) as GameObject;
+                suddenlyRefreshCanvas = GetLocalFactory().Instantiate(ResrouceFactory.UILocation + "Canvas", Vector3.zero);
                 suddenlyRefreshCanvas.name = "usuallyRefreshCanvas";
                 GameObject.DontDestroyOnLoad(suddenlyRefreshCanvas);
             }
@@ -54,7 +54,7 @@ public class UIFactory : IInstantiateFactory
         {
             if (unRefreshCanvas == null)
             {
-                unRefreshCanvas = UnityEngine.Object.Instantiate(GetObjectFactory().LoadObject(ResrouceFactory.UILocation + "Canvas")) as GameObject;
+                unRefreshCanvas = GetLocalFactory().Instantiate(ResrouceFactory.UILocation + "Canvas",Vector3.zero);
                 unRefreshCanvas.name = "usuallyRefreshCanvas";
                 GameObject.DontDestroyOnLoad(unRefreshCanvas);
             }
@@ -62,19 +62,19 @@ public class UIFactory : IInstantiateFactory
         }
     }
 
-    public override UnityEngine.GameObject CreateObjectToScene(string _name)
+    public override UnityEngine.GameObject CreateLocalObjectToScene(string _name)
     {
-        return CreateObjectToScene(_name, Vector3.zero, Quaternion.Euler(Vector3.zero));
+        return CreateLocalObjectToScene(_name, Vector3.zero, Quaternion.Euler(Vector3.zero));
     }
 
-    public override GameObject CreateObjectToScene(string _name, Vector3 _position)
+    public override GameObject CreateLocalObjectToScene(string _name, Vector3 _position)
     {
-        return CreateObjectToScene(_name,_position,Quaternion.Euler(Vector3.zero));
+        return CreateLocalObjectToScene(_name,_position,Quaternion.Euler(Vector3.zero));
     }
 
-    public override GameObject CreateObjectToScene(string _name, Vector3 _position, Quaternion _rotation)
+    public override GameObject CreateLocalObjectToScene(string _name, Vector3 _position, Quaternion _rotation)
     {
-        var UI = UnityEngine.Object.Instantiate(GetObjectFactory().LoadObject(ResrouceFactory.UILocation + _name)) as GameObject;
+        var UI = GetLocalFactory().Instantiate(ResrouceFactory.UILocation + _name) as GameObject;
         var UIRect = UI.GetComponent<RectTransform>();
 
         switch (refreshCanvas)

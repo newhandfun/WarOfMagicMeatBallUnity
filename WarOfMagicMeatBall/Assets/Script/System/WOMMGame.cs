@@ -86,7 +86,7 @@ public class WOMMGame {
         if (Camera.main == null)
         {
             FigureFactory.instance.figureLocation = FigureFactory.FigureLocation.Other;
-            FigureFactory.instance.CreateObjectToScene("Camera");
+            FigureFactory.instance.CreateLocalObjectToScene("Camera");
         }
         else if (Camera.main.GetComponent<MyCamera>() == null){
             Camera.main.gameObject.AddComponent<MyCamera>();

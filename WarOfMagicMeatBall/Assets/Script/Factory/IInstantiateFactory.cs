@@ -7,29 +7,59 @@ using UnityEngine;
 /// 用於實例化物件
 /// </summary>
 public abstract class IInstantiateFactory {
-    private IObjectFactory myObjectFactory = null;
 
-    public IObjectFactory GetObjectFactory() {
-        if (myObjectFactory == null)
-            myObjectFactory = new ResrouceFactory();
-        return myObjectFactory;
+    private IObjectFactory myLocalFactory = null;
+    private IObjectFactory myConnectionFactory = null;
+
+    public IObjectFactory GetLocalFactory() {
+        if (myLocalFactory == null)
+        {
+            myLocalFactory = new ResrouceFactory();
+        }
+        return myLocalFactory;
     }
 
-    public abstract GameObject CreateObjectToScene(string _name, Vector3 _position, Quaternion _rotation);
-
-
-    public virtual GameObject CreateObjectToScene(string _name) {
-        return CreateObjectToScene(_name,Vector3.zero,Quaternion.Euler(Vector3.zero));
+    public IObjectFactory ConnectionFactory{
+        get {
+            switch (Connection.GetConnectionMethod)
+            {
+                case ConnectionMethod.Photon:
+                    myLocalFactory = new PhotonFactory();
+                    break;
+                case ConnectionMethod.Unet:
+                    myLocalFactory = new UnetFactory();
+                    break;
+                default:
+                    myLocalFactory = new ResrouceFactory();
+                    break;
+            }
+            return myConnectionFactory;
+        }
     }
-    public virtual GameObject CreateObjectToScene(string _name,Vector3 _position)
+
+    public virtual GameObject CreateLocalObjectToScene(string _name, Vector3 _position, Quaternion _rotation) {
+        return GetLocalFactory().Instantiate(_name,_position,_rotation) as GameObject;
+    }
+
+    public virtual GameObject CreateLocalObjectToScene(string _name) {
+        return CreateLocalObjectToScene(_name,Vector3.zero,Quaternion.Euler(Vector3.zero));
+    }
+    public virtual GameObject CreateLocalObjectToScene(string _name,Vector3 _position)
     {
-        return CreateObjectToScene(_name, _position, Quaternion.Euler(Vector3.zero));
+        return CreateLocalObjectToScene(_name, _position, Quaternion.Euler(Vector3.zero));
     }
-    public virtual GameObject Instantiate(GameObject _object, Vector3 _position, Quaternion _rotation) {
-        return GameObject.Instantiate(_object,_position,_rotation);
-    }
-    public virtual GameObject Instantiate(GameObject _object, Vector3 _position)
+
+    public virtual GameObject CreateConnectionObjectToScene(string _name, Vector3 _position, Quaternion _rotation)
     {
-        return GameObject.Instantiate(_object, _position, Quaternion.Euler(Vector3.zero));
+        return ConnectionFactory.Instantiate(_name, _position, _rotation) as GameObject;
+    }
+
+    public virtual GameObject CreateConnectionObjectToScene(string _name)
+    {
+        return CreateConnectionObjectToScene(_name, Vector3.zero, Quaternion.Euler(Vector3.zero));
+    }
+    public virtual GameObject CreateConnectionObjectToScene(string _name, Vector3 _position)
+    {
+        return CreateConnectionObjectToScene(_name, _position, Quaternion.Euler(Vector3.zero));
     }
 }

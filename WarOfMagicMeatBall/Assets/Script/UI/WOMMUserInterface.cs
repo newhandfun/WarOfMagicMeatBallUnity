@@ -61,7 +61,7 @@ using UnityEngine.UI;
 
         //LoadUIformResource
         if (myRootUI == null) {
-            myRootUI = UIFactory.instance.CreateObjectToScene("Base");
+            myRootUI = UIFactory.instance.CreateLocalObjectToScene("Base");
             myRootUI.name = "Controller";
             RectTransform rect = myRootUI.GetComponent<RectTransform>();
             rect.sizeDelta = Vector3.zero;
@@ -71,7 +71,7 @@ using UnityEngine.UI;
         //move on controllor drag
         if (movementInput == null)
         {
-            GameObject moveObj = UIFactory.instance.CreateObjectToScene("Movement");
+            GameObject moveObj = UIFactory.instance.CreateLocalObjectToScene("Movement");
             RectTransform moveRect = moveObj.GetComponent<RectTransform>();
             moveRect.SetParent(myRootUI.transform);
             moveRect.sizeDelta = Vector3.zero;
@@ -84,7 +84,7 @@ using UnityEngine.UI;
         //attack on click
         if (attackInput == null)
         {
-            GameObject attackObj = UIFactory.instance.CreateObjectToScene("Attackion");
+            GameObject attackObj = UIFactory.instance.CreateLocalObjectToScene("Attackion");
             RectTransform attackRect = attackObj.GetComponent<RectTransform>();
             attackRect.SetParent(myRootUI.transform);
             attackRect.sizeDelta = Vector3.zero;
@@ -153,7 +153,7 @@ public class LogInUI : WOMMUserInterface {
     public override void Inititalize()
     {
         if (myRootUI == null) {
-            myRootUI = UIFactory.instance.CreateObjectToScene("Base",Vector3.zero);
+            myRootUI = UIFactory.instance.CreateLocalObjectToScene("Base",Vector3.zero);
             myRootUI.name = "LoginUI";
         }
     }
@@ -161,7 +161,7 @@ public class LogInUI : WOMMUserInterface {
     public void SetLoginButtonEvent(DelegateKind.VoidDelegate _login) {
         if (loginButton == null)
         {
-            var loginObj = (UIFactory.instance.CreateObjectToScene("LoginButton"));
+            var loginObj = (UIFactory.instance.CreateLocalObjectToScene("LoginButton"));
             loginObj.transform.SetParent(myRootUI.transform);
             loginButton = loginObj.GetComponentInChildren<MyButton>();
         }
@@ -179,7 +179,7 @@ public class ChooseUI : WOMMUserInterface{
     public override void Inititalize()
     {
         if (myRootUI == null) {
-            myRootUI = UIFactory.instance.CreateObjectToScene("Chooser") as GameObject;
+            myRootUI = UIFactory.instance.CreateLocalObjectToScene("Chooser") as GameObject;
         }
         myRootUI.SetActive(true);
 

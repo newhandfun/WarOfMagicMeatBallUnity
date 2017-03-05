@@ -16,24 +16,24 @@ public class FigureFactory : IInstantiateFactory{
     public FigureLocation figureLocation = FigureLocation.Orgin;
 
     //沒路徑的
-    public override GameObject CreateObjectToScene(string _name)
+    public override GameObject CreateLocalObjectToScene(string _name)
     {
-        return CreateObjectToScene(_name, Vector3.zero, Quaternion.Euler(Vector3.zero));
+        return CreateLocalObjectToScene(_name, Vector3.zero, Quaternion.Euler(Vector3.zero));
     }
 
-    public override GameObject CreateObjectToScene(string _name, Vector3 _position)
+    public override GameObject CreateLocalObjectToScene(string _name, Vector3 _position)
     {
-        return CreateObjectToScene(_name,_position,Quaternion.Euler(Vector3.zero));
+        return CreateLocalObjectToScene(_name,_position,Quaternion.Euler(Vector3.zero));
     }
 
-    public override GameObject CreateObjectToScene(string _name, Vector3 _position, Quaternion _rotation)
+    public override GameObject CreateLocalObjectToScene(string _name, Vector3 _position, Quaternion _rotation)
     {
         if (figureLocation != FigureLocation.Orgin) _name = figureLocation.ToString() + @"/" + _name;
         _name = ResrouceFactory.FigureLocation + _name;
 
         Debug.Log(_name);
 
-        var nObject = UnityEngine.Object.Instantiate(GetObjectFactory().LoadObject(_name)) as GameObject;
+        var nObject = GetLocalFactory().Instantiate(_name,_position,_rotation) as GameObject;
         nObject.transform.position = _position;
         nObject.transform.rotation = _rotation;
         return nObject;
@@ -45,11 +45,11 @@ public class FigureFactory : IInstantiateFactory{
     {
         figureLocation = FigureLocation.MeatBall;
         var _name = "MeatBall";
-        return CreateObjectToScene(_name, _postion,_rotation);
+        return CreateLocalObjectToScene(_name, _postion,_rotation);
     }
     public GameObject CreateMeatBallToScene(string _name ,Vector3 _postion, Quaternion _rotation)
     {
         figureLocation = FigureLocation.MeatBall;
-        return CreateObjectToScene(_name, _postion, _rotation);
+        return CreateLocalObjectToScene(_name, _postion, _rotation);
     }
 }

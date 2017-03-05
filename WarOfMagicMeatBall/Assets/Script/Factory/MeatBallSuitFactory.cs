@@ -39,11 +39,12 @@ public class MeatBallSuitFactory : IInstantiateFactory
     {
         foreach (MeatBallSuitEnum mbe in Enum.GetValues(typeof(MeatBallSuitEnum)))
         {
+
             var name = mbe.ToString();
-            var load = "Prefab/Suit/" + name + "/" + name;
+            var loadObject = "Prefab/Suit/" + name + "/" + name;
             var partsObject = new GameObject[partsName.Length];
-            var suitMB = GetObjectFactory().LoadObject(load) as GameObject;
-            var icon = GetObjectFactory().LoadObject(load + "_icon") as Image;
+            var suitMB = GetLocalFactory().LoadObject(loadObject) as GameObject;
+            var icon = GetLocalFactory().LoadObject(loadObject + "_icon") as Image;
             if (suitMB != null)
             {
                 for (int i = 0; i < partsName.Length; i++)
@@ -78,7 +79,7 @@ public class MeatBallSuitFactory : IInstantiateFactory
             newSuit = MBSuitDictionary[_name].CopySuit();
             for (int i=0; i< newSuit.GetPartsObject().Length;i++) {
                 if(newSuit.GetPartsObject()[i]!=null)
-                    newSuit.GetPartsObject()[i] = Instantiate(newSuit.GetPartsObject()[i], Vector3.zero);
+                    newSuit.GetPartsObject()[i] = GetLocalFactory().InstantiateLocal(newSuit.GetPartsObject()[i], Vector3.zero,new Quaternion());
             }
             MBSuitSceneDictionary.Add(newSuit.suitName,newSuit);
             return newSuit;
@@ -88,7 +89,7 @@ public class MeatBallSuitFactory : IInstantiateFactory
     public void RecycleSuit(GameObject[] _objects) {
         if (MeatBallSuitManager == null)
         {
-            MeatBallSuitManager = Instantiate(new GameObject(), Vector3.zero);
+            MeatBallSuitManager = GetLocalFactory().InstantiateLocal(new GameObject(), Vector3.zero,Quaternion.Euler(Vector3.zero));
             MeatBallSuitManager.name = "MeatBallSuitManager";
             GameObject.DontDestroyOnLoad(MeatBallSuitManager);
         }
@@ -99,18 +100,18 @@ public class MeatBallSuitFactory : IInstantiateFactory
         
     }
 
-    public override GameObject CreateObjectToScene(string _name)
+    public override GameObject CreateLocalObjectToScene(string _name)
     {
-        return CreateObjectToScene(_name,Vector3.zero,Quaternion.Euler(Vector3.zero));
+        return CreateLocalObjectToScene(_name,Vector3.zero,Quaternion.Euler(Vector3.zero));
     }
 
-    public override GameObject CreateObjectToScene(string _name, Vector3 _position)
+    public override GameObject CreateLocalObjectToScene(string _name, Vector3 _position)
     {
-        return CreateObjectToScene(_name, Vector3.zero, Quaternion.Euler(Vector3.zero));
+        return CreateLocalObjectToScene(_name, Vector3.zero, Quaternion.Euler(Vector3.zero));
     }
 
-    public override GameObject CreateObjectToScene(string _name, Vector3 _position, Quaternion _rotation)
+    public override GameObject CreateLocalObjectToScene(string _name, Vector3 _position, Quaternion _rotation)
     {
-        return CreateObjectToScene(_name, _position, _rotation);
+        return CreateLocalObjectToScene(_name, _position, _rotation);
     }
 }

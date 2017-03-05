@@ -36,11 +36,11 @@ public class FigureSystem : WOMMSystem{
     }
 
 	public GameObject ContructFigure(string _name,Vector3 _position,Quaternion _rotation){
-        return FigureFactory.instance.CreateObjectToScene(_name,_position,_rotation);
+        return FigureFactory.instance.CreateLocalObjectToScene(_name,_position,_rotation);
 	}
     public void ContructFigureAsMain(string _name, Vector3 _position, Quaternion _rotation)
     {
-        FigureFactory.instance.CreateObjectToScene(_name, _position, _rotation);
+        FigureFactory.instance.CreateLocalObjectToScene(_name, _position, _rotation);
     }
 
     public void ContructMeatBallAsMain(Vector3 _position,Quaternion _rotaion)
