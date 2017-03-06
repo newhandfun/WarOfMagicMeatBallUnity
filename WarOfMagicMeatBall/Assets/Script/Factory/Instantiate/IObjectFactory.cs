@@ -19,7 +19,7 @@ public abstract class IObjectFactory {
         return Instantiate(_name,Vector3.zero);
     }
 
-    public Object LoadObject(string _name) {
+    public virtual Object LoadObject(string _name) {
         return Resources.Load(_name);
     }
 

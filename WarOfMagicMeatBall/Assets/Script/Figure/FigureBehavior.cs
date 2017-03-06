@@ -49,9 +49,6 @@ public class FigureBehavior : Photon.MonoBehaviour {
     {
         CencleAttackAnimtion
     }
-    protected virtual void InitialInvoke() {
-        
-    }
     public virtual void CallInvoke(string _funtionName,float _time) {
         if (IsNotMine())
             return;
@@ -77,8 +74,6 @@ public class FigureBehavior : Photon.MonoBehaviour {
     public virtual void SetAnimatorBool(int _hash, bool _value) { myAnimator.SetBool(_hash, _value); }
     public virtual void SetAnimatorFloat(int _hash, float _value) { myAnimator.SetFloat(_hash, _value); }
     public void CencleAttackAnimtion() { myAnimator.SetInteger("AttackType", 0); }
-
-
 
     public void Moveable() {
         GetAnimator().runtimeAnimatorController = normalAnimator;
@@ -110,7 +105,24 @@ public class FigureBehavior : Photon.MonoBehaviour {
     }
     #endregion
 
-    //State Delegate
+    #region Combat
+    public DelegateKind.HittedDelegate hittedEvent;
+    public DelegateKind.VoidDelegate closeInvincible;
+
+    public void Hitted(int _damage,bool _isBroken) {
+        if(hittedEvent!=null) hittedEvent(_damage,_isBroken);
+    }
+
+    public void Invincible(float _times) {
+        StartCoroutine(InvincibleTimer(_times));
+    }
+    IEnumerator InvincibleTimer(float _times) {
+        yield return new WaitForSeconds(_times);
+        if(closeInvincible!=null)closeInvincible();
+    }
+    #endregion
+
+    //State
     public virtual void Awake()
     {
         myObject = gameObject;
@@ -118,7 +130,6 @@ public class FigureBehavior : Photon.MonoBehaviour {
         selfColider = GetComponent<BoxCollider>();
         myAnimator = GetComponent<Animator>();
 
-        InitialInvoke();
 
         normalAnimator = Resources.Load("Animator/Figure") as RuntimeAnimatorController;
         myPhotonView = GetComponent<PhotonView>();

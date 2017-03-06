@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class MeatBall : Figure {
 
-    public MeatBall(GameObject _object, FigureValue _value) : base(_object,_value)
+    public MeatBall(GameObject _object, FigureValue _value, string _ADataName) : base(_object,_value,_ADataName)
     {
         attackNumber = 3;
         myMBBehavior = (MeatBallBehavior)myBehavior;

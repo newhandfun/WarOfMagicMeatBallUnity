@@ -48,7 +48,7 @@ public class FigureSystem : WOMMSystem{
         if (mainMeatBall == null)
         {
             mainMeatBall = FigureFactory.instance.CreateMeatBallToScene(_position,_rotaion);
-            main = (new MeatBall(mainMeatBall,new MeatBallValue(100,100,10)))as Figure;
+            main = (new MeatBall(mainMeatBall,new FigureValue()))as Figure;
             GameObject.DontDestroyOnLoad(mainMeatBall);
         }
     }
@@ -58,7 +58,7 @@ public class FigureSystem : WOMMSystem{
         if (mainMeatBall == null)
         {
             mainMeatBall = FigureFactory.instance.CreateMeatBallToScene(_name, _position, _rotaion);
-            main = (new MeatBall(mainMeatBall, new MeatBallValue(100, 100, 10))) as Figure;
+            main = (new MeatBall(mainMeatBall, new FigureValue())) as Figure;
             GameObject.DontDestroyOnLoad(main.GetObject());
         }
     }

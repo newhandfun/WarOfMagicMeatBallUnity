@@ -23,6 +23,10 @@ public class Effect : Photon.MonoBehaviour {
     }
     #endregion
 
+    #region Property
+
+    int myTeamNumber = 0;
+
     [SerializeField]
     int damage = 0;
     [SerializeField]
@@ -30,10 +34,16 @@ public class Effect : Photon.MonoBehaviour {
     [SerializeField]
     bool isInterrupt = true;
     public float speed = 1f;
+    public bool isNetworkObject = false;
+    #endregion
 
     #region UnityProperty
     private ParticleSystem myParticle;
     #endregion
+
+    void Initial(int _teamNumber) {
+        myTeamNumber = _teamNumber;
+    }
 
     void Start() {
 
@@ -43,11 +53,28 @@ public class Effect : Photon.MonoBehaviour {
         damage = colliderEnable.damage;
         isBroken = colliderEnable.isBroken;
         enableColliderCoroutine = StartCoroutine(ColliderEnableTask());
+
+        myParticle.Play();
     }
 
     void Stop() {
         StopCoroutine(enableColliderCoroutine);
     }
 
+    IEnumerator DestoryAfterPlayed() {
+        yield return new WaitForSeconds(speed*myParticle.time);
+        if (isNetworkObject)
+            PhotonNetwork.Destroy(this.gameObject);
+        else
+            Destroy(gameObject);
+    }
 
+    void OnTriggerEnter(Collider _other) {
+
+        int otherTN = 0;
+
+        if (otherTN != myTeamNumber) {
+
+        }
+    }
 }
