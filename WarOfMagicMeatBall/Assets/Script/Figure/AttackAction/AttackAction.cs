@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "AttactionScriptableObject/Attacktion")]
+[CreateAssetMenu(menuName = "ScriptableObject/Attacktion")]
 public class AttactionData : ScriptableObject {
 
 

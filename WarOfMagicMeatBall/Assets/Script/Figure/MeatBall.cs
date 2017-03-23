@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class MeatBall : Figure {
 
-    public MeatBall(GameObject _object, FigureValue _value, string _ADataName) : base(_object,_value,_ADataName)
+    public MeatBall(GameObject _object, FigureValue _value) : base(_object,_value)
     {
         attackNumber = 3;
         myMBBehavior = (MeatBallBehavior)myBehavior;
@@ -24,7 +24,7 @@ public class MeatBall : Figure {
     public override void MoveFinish()
     {
         AnimWalk(0f);
-    }
+    }                                                                                     
 
     public override void UseSkill(int index)
     {

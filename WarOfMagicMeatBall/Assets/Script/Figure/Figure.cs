@@ -26,11 +26,10 @@ public abstract class Figure {
 
     public Figure() { }
 
-    public Figure(GameObject _object,FigureValue _value,string _ADataName) {
+    public Figure(GameObject _object,FigureValue _value) {
         SetBehavior(_object);
         SetValue(_value);
         myDefence = new DefenceSystem(ref myValue);
-        SetAttactionData(_ADataName);
     }
 
     public virtual void SetBehavior(GameObject _object) {
