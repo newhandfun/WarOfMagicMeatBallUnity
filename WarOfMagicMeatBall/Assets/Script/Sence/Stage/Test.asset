@@ -21,3 +21,17 @@ MonoBehaviour:
       hpMax: 10
       speed: 10
       defence: 0
+  - name: 
+    type: 0
+    value:
+      hp: 100
+      hpMax: 10
+      speed: 10
+      defence: 0
+  - name: 
+    type: 0
+    value:
+      hp: 100
+      hpMax: 10
+      speed: 10
+      defence: 0
